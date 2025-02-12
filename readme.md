@@ -10,43 +10,7 @@
 
 **사용 기술** Html5, Css3, JavaScript, jQuery, Bootstrap4
 
-
-
-**프로젝트 구조**
-
-> :open_file_folder: **src** (source) - 소스코드 저장 (주요 코드와 관련된 모든 파일)
-> ​	:open_file_folder: **assets** - 정적 자산 파일
-> ​		:file_folder: icon - `favicon`
-> ​		:file_folder: media - 각자 필요한 파일 추가
-> ​			:file_folder: images
-> ​			:file_folder: videos
->
-> ​	:file_folder: components - 독립적, 재사용 가능한 UI요소 및 기능
-> ​		:page_facing_up: footer.html
-> ​		:page_facing_up: header.html
->
-> ​	:file_folder: **data**
-> ​		:page_facing_up: nav.json
-> ​		(ajax로 활용할 데이터 작성)
->
-> ​	:open_file_folder: **js** - 기능 파일 관리
-> ​		:page_facing_up: app.js - 전역 기능
-> ​		:page_facing_up: utils.js - 재사용 함수 및 API
-> ​		(각자 js 파일)
->
-> ​	:file_folder: **pages** - 각 페이지 구성
-> ​		:page_facing_up: about.html
-> ​		:page_facing_up: FAQ.html
-> ​		:page_facing_up: IR.html
-> ​		:page_facing_up: products.html
->
-> ​	:file_folder: **styles** - css 관리
-> ​		:page_facing_up: main.css - `reset`, `base`, `font`, `header`, `footer` 
-> ​		(각자 css 파일)
->
-> index.html
->
-> **readme**
+![Image](https://private-user-images.githubusercontent.com/52684457/412239217-b37c38ba-d9b2-4d73-ab88-a080706f796c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzkzMjc5NDIsIm5iZiI6MTczOTMyNzY0MiwicGF0aCI6Ii81MjY4NDQ1Ny80MTIyMzkyMTctYjM3YzM4YmEtZDliMi00ZDczLWFiODgtYTA4MDcwNmY3OTZjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMTIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjEyVDAyMzQwMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBmYjgwNTU5NmY4OWYyMGFlZjcxZjcwZDE4ZTRkMDUyNWU5NGRlMjQ0OThiZDVkOTdmODk0YTQ5OWY1MmNhN2ImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.VZS0VBvRKSx8PzuGZRUTYEZ3jwBzLLykmYXIyUmKkn0)
 
 - 파일 경로 오류가 날 경우 상대경로가 아닌 절대 경로를 추천
 - 기본 틀로 구성하였으나, 상황에 따른 폴더 구조가 상이할 수 있음
