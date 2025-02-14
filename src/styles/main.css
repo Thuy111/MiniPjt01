@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, blockquote, figure, fieldset, pr
   font-weight: normal;
   font-size: 16px;
 }
-#container {width: 100%; margin-top: 81px;}
+#container {width: 100%; margin-top: 81px;margin-bottom: 196px;}
 
 /* 드래그 색상 */
 ::selection {background: #ffe400;}
