@@ -1,3 +1,3 @@
 $(document).ready(function(){
-  // IR 기능
+  //여기부터 시작
 });
