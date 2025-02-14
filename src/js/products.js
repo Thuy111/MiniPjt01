@@ -9,20 +9,20 @@ $(document).ready(function(){
     slidesToScroll: 1,
     pauseOnFocus: true,
     pauseOnHover: true,
-    responsive: [ //반응형 설정
-      // {
-      //   breakpoint: 768,
-      //   settings: {
-      //     slidesToShow: 3,
-      //   }
-      // },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 3,                  
-        }
-      }
-    ]
+    // responsive: [ //반응형 설정
+    //   // {
+    //   //   breakpoint: 768,
+    //   //   settings: {
+    //   //     slidesToShow: 3,
+    //   //   }
+    //   // },
+    //   {
+    //     breakpoint: 576,
+    //     settings: {
+    //       slidesToShow: 3,                  
+    //     }
+    //   }
+    // ]
 
   } );
 });
