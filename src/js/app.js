@@ -1,1 +1,5 @@
-// $(document).ready(function(){}); // jQuery ready function
+$(document).ready(function(){
+  // Header-Navigation
+  // $()
+});
+

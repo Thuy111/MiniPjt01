@@ -30,7 +30,15 @@ nav#main_nav {
   color: white;
   background-color: #313955;
 }
-nav#main_nav>ul{height: 100%;display: flex;justify-content: space-between;align-items: center;}
+nav#main_nav>ul{
+  height: 100%;
+  width: 100%; 
+  max-width: 1080px; 
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /* footer */
 footer {
