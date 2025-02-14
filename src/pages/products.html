@@ -1,33 +1,159 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- jQuery/ajax -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <!-- Bootstrap4 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <!-- fontawsome -->
-  <script src="https://kit.fontawesome.com/e7c9242ec2.js" crossorigin="anonymous"></script>
-  <!-- stylesheet -->
-  <link rel="stylesheet" href="/src/styles/main.css">
-</head>
-<body>
-  <header></header>
-
-  <div id="container">
-    <!-- 코드작성 -->
-    <h1>상품안내</h1>
-  </div>
+  <title>입출금통장 | 카카오뱅크</title>
+  <link rel="icon" href="img/mark.png" sizes="192x192" />
 
   
-  <footer></footer>
-  <script>
-    $(function(){
-      $('header').load('../components/header.html');
-      $('footer').load('../components/footer.html');
-    });
-  </script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+  <!-- Slick JS -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+
+  <link href="css/product.css" rel="stylesheet">
+  <script src="js/product.js"></script>
+</head>
+
+<body>
+
+  <!-- 메인 컨텐츠 폼/컨테이너 --------------------------------------------- -->
+  <div class="product_container test">
+
+    <div id="header">
+      <div id="subhead">카카오뱅크와 함께 누구나 쉽게</div>
+      <h1 id="mainhead">카카오뱅크 <span>입출금통장</span></h1>
+    </div>
+    <div id="sub_content_left" class="floating">
+      <div>계좌번호를 몰라도</div>
+      <div>카카오톡 간편이체</div>
+    </div>
+    <div id="sub_content_right" class="floating_clear">
+      <div>ATM 출금도 부담없이</div>
+      <div>수수료 0원</div>
+    </div>
+  </div>  <!-- 컨테이너 끝 -->
+  
+    <!-- 캐러셀(글자 애니메이션)---------------- -->
+    <div id="moving_panel" class="slider">      
+      <div><img src="img/mark.png" alt="글자가 들어갈 자리"></div>
+      <div><img src="img/mark.png" alt="글자가 들어갈 자리"></div>
+      <div><img src="img/mark.png" alt="글자가 들어갈 자리"></div>
+      <div><img src="img/mark.png" alt="글자가 들어갈 자리"></div>
+      <div><img src="img/mark.png" alt="글자가 들어갈 자리"></div>
+      <div><img src="img/mark.png" alt="글자가 들어갈 자리"></div>
+      <div><img src="img/mark.png" alt="글자가 들어갈 자리"></div>
+    </div>
+
+
+
+    
+  <div class="product_container test">
+    <div id="content1">
+      <div id="panel1" class="floating">
+        <div id="subtext1">더 쉽고</div>
+        <div id="maintext1">스마트하게</div>
+        <div id="text1">통장의 많은 정보와 기능을<br>편리하게 이용해 보세요.</div>
+      </div>
+      <img id="img_content1" class="floating_clear img_set" src="img/smartbank_mv_1.webp">
+    </div>
+    <div id="content2">
+      <div id="panel2" class="floating">
+        <div id="subtext2">필요할 때</div>
+        <div id="maintext2">바로 간편이체</div>
+        <div id="text2">계좌번호를 몰라도 괜찮아요.<br>카카오톡 친구에게 바로 이체해 보세요.</div>
+      </div>
+      <img id="img_content2" class="floating_clear img_set" src="img/easybank_mv_2.webp">
+    </div>
+    <div id="content3">
+      <div id="panel3" class="floating">
+        <div id="subtext3">찾아다니지 말아요</div>
+        <div id="maintext3">수수료 0원</div>
+        <div id="text3">은행/편의점 ATM 이용 수수료도,<br>타행 이체 수수료도 모두 0원으로 이용해 보세요.</div>
+      </div>
+      <img id="img_content3" class="floating_clear img_set" src="img/atm_mv_3.webp">
+    </div>
+    <div id="content4">
+      <div id="panel4" class="floating">
+        <div id="subtext4">여유자금은</div>
+        <div id="maintext4">더 쏠쏠하게</div>
+        <div id="text4">통장을 여러 개 만들지 않아도 괜찮아요.<br>하루만 맡겨도 연 2.00%(세전)를 제공하는<br>세이프박스에 보관해 보세요.</div>
+      </div>
+      <img id="img_content4" class="floating_clear img_set" src="img/safebox_mv_4.webp"
+    </div>
+    <div id="content5">
+      <div id="panel5" class="floating">
+        <div id="subtext5">언제든지 누구나</div>
+        <div id="maintext5">카카오뱅크</div>
+        <div id="text5">영업점 방문 없이 계좌개설, 대출신청, 해외송금까지<br>언제든 필요한 은행 업무를<br>카카오뱅크 모바일 앱으로 이용해 보세요.</div>
+      </div>
+      <img id="img_content5" class="floating_clear img_set" src="img/logo_5.png">
+    </div>
+
+    <div id="question_panel">
+      <div>자주하는 질문</div>
+      <div id="q_panel1">
+        <div>입출금통장~</div>
+        <div>계좌 ~</div>
+      </div>
+      <div id="q_panel2">
+        <div>카카오뱅크~</div>
+        <div>네. ~</div>
+      </div>
+      <div id="more_btn">질문 전체보기</div>
+    </div>
+
+    <div id="more_info">
+      <div>상품안내</div>
+      <div>금리정보</div>
+      <div>수수료정보</div>
+      <div>기타사항</div>
+      <div>상품설명서 및 이용약관</div>
+    </div>
+
+    <div id="ad_contents">
+      <div id="safebox" class="floating2">
+        <img src="img/safebox_icon.png" class="floatingbtn img_icon_set">
+        <div class="floating_clear">
+          <div>계좌 속 여유자금을 안전하게</div>
+          <div>세이프박스</div>
+        </div>
+      </div>
+      <div id="pigbank" class="floating2">
+        <img src="img/pig_icon.png" class="floatingbtn img_icon_set">
+        <div class="floating_clear">
+          <div>숨어있던 잔돈을 차곡차곡</div>
+          <div>저금통</div>  
+        </div>
+      </div>
+      <div id="signal_code" class="floating_clear">
+        준법감시인 심의필 24-1754 (2024.12.02.~2025.12.01.)
+      </div>
+    </div>
+
+    <div class="footer">
+      -
+    </div>
+    
+  </div>  <!-- 컨테이너 -->
+
+
+
+
+
+  
 </body>
 </html>

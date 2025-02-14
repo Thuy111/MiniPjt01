@@ -1,1 +1,48 @@
-/* 프로덕트 페이지 css */
+
+.test *{
+  border: 1px solid #bbb;
+}
+nav{
+  margin-top: 130px;
+}
+
+
+
+.footer{
+  height: 300px;
+  background-color: #aaa;
+}
+.product_container{
+  text-align: center;
+  margin: 0px 20%;
+}
+#moving_panel{
+  width: 100%;
+  /* min-height: 200px; */
+  background-color: #23A662;
+}
+
+.floating{
+  float: left;
+  width: 50%;
+}
+.floating_clear{
+  float: none;
+}
+.img_set{
+  width: 400px;
+}
+.floatingbtn{
+  float: left;
+}
+.floating2{
+  float: left;
+  width: 30%;
+}
+.img_icon_set{
+  width: 40px;
+}
+#ad_contents{
+  font-size: 16px;
+  height: 100px;
+}
