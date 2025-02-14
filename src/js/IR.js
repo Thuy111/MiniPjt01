@@ -1,3 +1,3 @@
 $(document).ready(function(){
-  // IR
+  // IR 기능
 });
