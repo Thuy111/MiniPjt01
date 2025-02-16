@@ -1,9 +1,16 @@
 $(document).ready(function(){
   // Header-Navigation
-
   $('nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a').on('mouseenter', function(){activeNav()});
   $('nav#main_nav').on('mouseleave', function(){inactiveNav()});
   $('nav#main_nav>ul>ul>li:nth-last-child(-n+2)').on('mouseenter', function(){inactiveNav()});
+  $(window).on('scroll', function(){
+    if($(window).scrollTop() > 40){
+      activeNav();
+    }else{
+      inactiveNav();
+    }
+  });
+
 
   // navigation 활성화
   function activeNav(){
