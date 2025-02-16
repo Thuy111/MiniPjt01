@@ -1,1 +1,48 @@
+<<<<<<< HEAD
 /*  about */
+/* 홈 이미지 */
+.phoneImg{
+background-image: url(../assets/media/images/02about/home_image.png);
+background-size: cover;
+height: 500px;
+}
+.timeline{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  /* min-height: 100vh; Để căn giữa theo toàn bộ chiều cao */
+}
+.video{
+  height: 500px;
+  background: #FAFAFA
+  ;
+}
+.biImg{
+  background-image: url(../assets/media/images/02about/img_brand_bi.png);
+  background-size: cover;
+  height: 500px;
+  
+}
+#dl_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_down {
+  display: inline-block;
+  width: 298px;
+  height: 48px;
+  margin: 0 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 13px;
+  line-height: 48px;
+  color: #666;
+  background-color: #fafafa;
+  text-align: center;
+  align-items: center;
+  
+}
+=======
+/*  about */
+>>>>>>> dev
