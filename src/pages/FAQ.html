@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>자주묻는질문 | 카카오뱅크</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="/src/assets/icon/favicon.png" type="image/x-icon">
   <!-- Bootstrap v4.6 -->
@@ -32,7 +32,7 @@
       <div id="search_contents">
         <h2>무엇을 도와드릴까요?</h2>
         <div id="question_box">
-          <img src="/src/assets/images/serch_icon_black.png" alt="serch_icon">
+          <img src="/src/assets/media/images/serch_icon_black.png" alt="serch_icon">
           <input id="question" type="text" placeholder="궁금하신 점이 있다면 검색 혹은 도움말 카테고리를 선택하세요.">
         </div>
         <ul id="serch_tags">
@@ -46,313 +46,122 @@
     </section>
     <section id="faq">
       <!-- Nav tabs -->
-      <ul class="nav" role="tablist">
-        <li>
-          <a class="nav-link active" data-toggle="tab" href="#menu01">입출금/예적금</a>
+      <ul id="tab_list" class="nav" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#category01">입출금/예적금</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu02">대출</a>
+          <a class="nav-link" data-toggle="tab" href="#category02">대출</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu03">외환</a>
+          <a class="nav-link" data-toggle="tab" href="#category03">외환</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu04">카드</a>
+          <a class="nav-link" data-toggle="tab" href="#category04">카드</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu05">투자</a>
+          <a class="nav-link" data-toggle="tab" href="#category05">투자</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu06">mini</a>
+          <a class="nav-link" data-toggle="tab" href="#category06">mini</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu07">사업자</a>
+          <a class="nav-link" data-toggle="tab" href="#category07">사업자</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu08">ATM</a>
+          <a class="nav-link" data-toggle="tab" href="#category08">ATM</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu09">제휴서비스</a>
+          <a class="nav-link" data-toggle="tab" href="#category09">제휴서비스</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu10">인증/보안</a>
+          <a class="nav-link" data-toggle="tab" href="#category10">인증/보안</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu11">알림</a>
+          <a class="nav-link" data-toggle="tab" href="#category11">알림</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu12">앱 이용</a>
+          <a class="nav-link" data-toggle="tab" href="#category12">앱 이용</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu13">개인금고</a>
+          <a class="nav-link" data-toggle="tab" href="#category13">개인금고</a>
         </li>
         <li>
-          <a class="nav-link" data-toggle="tab" href="#menu14">기타</a>
+          <a class="nav-link" data-toggle="tab" href="#category14">기타</a>
         </li>
       </ul>
 
       <!-- Tab panes -->
       <article class="tab-content">
-        <div id="menu01" class="tab-pane active">
+        <div id="category01" class="tab-pane fade show active">
           <p>입출금/예적금(349)</p>
-          <div id="contents01">
-            <div>
-              <div>
-                <a class="card-link" data-toggle="collapse" href="#content001">
-                  [아파트관리비 자동납부] 자동납부가 해지되었다고 갑자기 메시지가 왔어요.
-                </a>
-              </div>
-              <div id="content001" class="collapse" data-parent="#contents01">
-                <div>
-                  자동납부 해지 메시지는 아래의 경우 받으실 수 있습니다.<br>
-                  <br>
-                  ■ 자동납부 해지 메세지를 받는 경우<br>
-                  · 고객님이 해당 자동납부 건을 직접 해지하신 경우<br>
-                  · 타인이 당행 앱에서 같은 세대의 관리비 자동납부를 신청한 경우<br>
-                  · 본인 혹은 타인이 다른 금융기관(은행, 카드사 등)을 통해 같은 세대의 관리비 자동납부를 신청한 경우<br>
-                  <br>
-                  자동이체 해지를 원하지 않는 경우, 해당 세대로 자동납부를 다시 신청 바랍니다.<br>
-                  <br>
-                  [카카오뱅크 모바일앱 경로 안내]<br>
-                  · 아파트관리비 납부 바로가기<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 아파트관리비 납부<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 자동이체<br>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a class="collapsed card-link" data-toggle="collapse" href="#content002">
-                  [아파트관리비 자동납부] 관리비 자동납부 알림을 끄고 싶어요.
-                </a>
-              </div>
-              <div id="content002" class="collapse" data-parent="#contents01">
-                <div>
-                  관리비 자동납부 알림은 아래에서 관리하실 수 있습니다.<br>
-                  <br>
-                  ■ 해지 방법<br>
-                  [전체탭 > 설정 > 보안/주요 정보 알림 > 자동이체 안내]<br>
-                  <br>
-                  [카카오뱅크 모바일앱 경로 안내]<br>
-                  · 아파트관리비 납부 바로가기<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 아파트관리비 납부<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 자동이체
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a class="collapsed card-link" data-toggle="collapse" href="#content003">
-                  [아파트관리비 납부] 아파트관리비 납부 서비스 알림은 언제 오나요?
-                </a>
-              </div>
-              <div id="content003" class="collapse" data-parent="#contents01">
-                <div>
-                  아파트관리비 납부 서비스 알림은 아래와 같습니다. 필수 알림 항목은 임의로 해지할 수 없습니다.<br>
-                  <br>
-                  ■ 서비스 필수 알림<br>
-                  · 관리비 고지 안내<br>
-                  · 즉시납부 마감 예정<br>
-                  · 납부 마감 예정<br>
-                  · 자동납부 신청/해지<br>
-                  <br>
-                  ■ 서비스 선택 알림 (자동이체 앱푸시 설정 가능)<br>
-                  · 자동납부 출금예정<br>
-                  · 자동납부 출금/실패 안내<br>
-                  <br>
-                  [카카오뱅크 모바일앱 경로 안내]<br>
-                  · 아파트관리비 납부 바로가기<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 아파트관리비 납부<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 자동이체
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a class="card-link" data-toggle="collapse" href="#content004">
-                  [아파트관리비 납부] 아파트관리비 납부 서비스를 해지하고 싶어요.
-                </a>
-              </div>
-              <div id="content004" class="collapse" data-parent="#contents01">
-                <div>
-                  아파트관리비 납부 서비스 해지는 아래와 같이 하실 수 있습니다.<br>
-                  <br>
-                  ■ 서비스 해지 방법<br>
-                  [전체탭 > 설정 > 약관 및 이용동의 > '아파트관리비 납부' 해지하기<br>
-                  <br>
-                  ※ 주의사항<br>
-                  · 아파트아이 서비스는 아파트아이 앱에서 직접 탈퇴해주세요. (아파트아이 정책 상 탈퇴 후 30일 간 재가입 불가)<br>
-                  · 아파트관리비 납부 서비스를 해지하더라도 자동납부 등록 건은 유지되니 주의해주세요.<br>
-                  <br>
-                  [카카오뱅크 모바일앱 경로 안내]<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 설정 > 약관 및 이용동의 > '아파트관리비 납부' 해지하기
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a class="collapsed card-link" data-toggle="collapse" href="#content005">
-                  [아파트관리비 납부] 직접 이체 시 받는 분 표기에 동호수를 입력해야 하나요?
-                </a>
-              </div>
-              <div id="content005" class="collapse" data-parent="#contents01">
-                <div>
-                  관리사무소 계좌번호로 직접 이체 시, 관리사무소에서 동호수 정보를 확인할 수 있도록 '받는 분 표기' 항목에 동호수를 입력 바랍니다.<br>
-                  <br>
-                  [카카오뱅크 모바일앱 경로 안내]<br>
-                  · 아파트관리비 납부 바로가기<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 아파트관리비 납부
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a class="collapsed card-link" data-toggle="collapse" href="#content006">
-                  [아파트관리비 납부] 관리비 납부 내역을 확인하고, 확인증을 발급받고 싶어요.
-                </a>
-              </div>
-              <div id="content006" class="collapse" data-parent="#contents01">
-                <div>
-                  관리비 납부 내역 조회와 확인증 발급은 아래에서 하실 수 있습니다.<br>
-                  <br>
-                  ■ 즉시납부 납부내역 조회 (납부확인증)<br>
-                  · [전체탭 > 아파트관리비 납부 > 납부내역 > 납부 건 선택 > 왼쪽 아래 문서 버튼 선택]<br>
-                  <br>
-                  ■ 자동납부 납부내역 조회 (출금확인증)<br>
-                  · [전체탭 > 아파트관리비 납부 > 자동납부 관리 > 출금내역 선택 > 왼쪽 아래 '출금확인증' 선택]<br>
-                  <br>
-                  [카카오뱅크 모바일앱 경로 안내]<br>
-                  · 아파트관리비 납부 바로가기<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 아파트관리비 납부<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 자동이체<br>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a class="card-link" data-toggle="collapse" href="#content007">
-                  [아파트관리비 자동납부] 이사를 가서 자동납부 주소를 변경하고 싶어요. 기존 자동납부 건은 자동취소되나요?
-                </a>
-              </div>
-              <div id="content007" class="collapse" data-parent="#contents01">
-                <div>
-                  이사 등의 이유로 자동납부할 주소를 변경하고 싶은 경우, 반드시 기존 자동납부 건을 해지하고 재신청해주세요.<br>
-                  <br>
-                  기존 자동납부 건을 해지하지 않으면, 이사 전 주소의 관리비가 자동납부될 수 있으니 주의 바랍니다.<br>
-                  <br>
-                  [카카오뱅크 모바일앱 경로 안내]<br>
-                  · 아파트관리비 납부 바로가기<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 아파트관리비 납부<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 자동이체<br>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a class="collapsed card-link" data-toggle="collapse" href="#content008">
-                  [아파트관리비 자동납부] 자동납부 출금된 내역을 취소할 수 있나요?
-                </a>
-              </div>
-              <div id="content008" class="collapse" data-parent="#contents01">
-                <div>
-                  이미 납부한 관리비는 카카오뱅크 앱에서 취소할 수 없습니다. 취소, 환불, 중복 납부 문의는 관리비를 납부한 아파트 관리사무소로 문의해주세요.<br>
-                  <br>
-                  [카카오뱅크 모바일앱 경로 안내]<br>
-                  · 아파트관리비 납부 바로가기<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 아파트관리비 납부<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 자동이체<br>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a class="collapsed card-link" data-toggle="collapse" href="#content009">
-                  [아파트관리비 자동납부] 자동납부를 해지하고 싶어요.
-                </a>
-              </div>
-              <div id="content009" class="collapse" data-parent="#contents01">
-                <div>
-                  관리비 자동납부는 아래에서 해지할 수 있습니다.<br>
-                  <br>
-                  ■ 자동납부 해지 방법<br>
-                  · [전체탭 > 아파트관리비 납부 > 자동납부 관리 > '해지하기' 선택]<br>
-                  · [전체탭 > 자동이체 화면 내 전체탭 > 해당 관리비 선택 > '해지하기' 선택]<br>
-                  <br>
-                  ※ 이체 목록에 이체 건이 없다면, 오른쪽 위 계좌이름을 눌러 [모두선택]으로 변경해주세요.<br>
-                  <br>
-                  [카카오뱅크 모바일앱 경로 안내]<br>
-                  · 아파트관리비 납부 바로가기<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 아파트관리비 납부<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 자동이체<br>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a class="card-link" data-toggle="collapse" href="#content010">
-                  [아파트관리비 자동납부] 자동납부 출금에 실패했어요. 관리비를 납부할 방법이 없나요?
-                </a>
-              </div>
-              <div id="content010" class="collapse" data-parent="#contents01">
-                <div>
-                  이번 달 관리비를 아직 납부하지 못한 경우, 관리비 계좌번호로 관리비를 직접 이체하실 수 있습니다.<br>
-                  <br>
-                  ■ 관리사무소 정보<br>
-                  자동납부 출금일 후, [관리비 조회화면 > 관리사무소 0월 0일까지 납부마감 선택]하여 관리사무소 정보 확인 가능<br>
-                  <br>
-                  ※ 납부마감 후 관리비 연체료가 발생할 수 있으니 정확한 관리비 금액을 관리사무소에 확인 후 이체해주세요.<br>
-                  <br>
-                  ※ 관리사무소로 직접 이체 시 '받는 분에게 표기'에 동호수 정보를 입력하여 이체해주세요.<br>
-                  <br>
-                  ※ 관리사무소로 직접 이체하여 납부한 결과는 관리비 조회화면에서 결과를 확인할 수 없습니다.<br>
-                  <br>
-                  [카카오뱅크 모바일앱 경로 안내]<br>
-                  · 아파트관리비 납부 바로가기<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 아파트관리비 납부<br>
-                  · 홈 화면 오른쪽 하단 전체탭( ··· ) > 자동이체<br>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div id="faq_container01"></div>
+          <a id="load_more1">더보기</a>
         </div>
-        <div id="menu02" class="container tab-pane fade">
+        <div id="category02" class="tab-pane fade">
           <p>대출(546)</p>
+          <div id="faq_container02"></div>
+          <a id="load_more2">더보기</a>
         </div>
-        <div id="menu03" class="container tab-pane fade">
+        <div id="category03" class="tab-pane fade">
           <p>외환(100)</p>
+          <div id="faq_container03"></div>
+          <a id="load_more3">더보기</a>
         </div>
-        <div id="menu04" class="container tab-pane fade">
+        <div id="category04" class="tab-pane fade">
           <p>카드(201)</p>
+          <div id="faq_container04"></div>
+          <a id="load_more4">더보기</a>
         </div>
-        <div id="menu05" class="container tab-pane fade">
+        <div id="category05" class="tab-pane fade">
           <p>투자(128)</p>
+          <div id="faq_container05"></div>
+          <a id="load_more5">더보기</a>
         </div>
-        <div id="menu06" class="container tab-pane fade">
+        <div id="category06" class="tab-pane fade">
           <p>mini(112)</p>
+          <div id="faq_container06"></div>
+          <a id="load_more6">더보기</a>
         </div>
-        <div id="menu07" class="container tab-pane fade">
+        <div id="category07" class="tab-pane fade">
           <p>사업자(81)</p>
+          <div id="faq_container07"></div>
+          <a id="load_more7">더보기</a>
         </div>
-        <div id="menu08" class="container tab-pane fade">
-          <p>ATM(30)/p>
+        <div id="category08" class="tab-pane fade">
+          <p>ATM(30)</p>
+            <div id="faq_container08"></div>
+          <a id="load_more8">더보기</a>
         </div>
-        <div id="menu09" class="container tab-pane fade">
+        <div id="category09" class="tab-pane fade">
           <p>제휴서비스(86)</p>
+          <div id="faq_container09"></div>
+          <a id="load_more9">더보기</a>
         </div>
-        <div id="menu10" class="container tab-pane fade">
+        <div id="category10" class="tab-pane fade">
           <p>인증/보안(85)</p>
+          <div id="faq_container10"></div>
+          <a id="load_more10">더보기</a>
         </div>
-        <div id="menu11" class="container tab-pane fade">
+        <div id="category11" class="tab-pane fade">
           <p>알림(18)</p>
+          <div id="faq_container11"></div>
+          <a id="load_more11">더보기</a>
         </div>
-        <div id="menu12" class="container tab-pane fade">
+        <div id="category12" class="tab-pane fade">
           <p>앱 이용(75)</p>
+          <div id="faq_container12"></div>
+          <a id="load_more12">더보기</a>
         </div>
-        <div id="menu13" class="container tab-pane fade">
+        <div id="category13" class="tab-pane fade">
           <p>개인금고(19)</p>
+          <div id="faq_container13"></div>
+          <a id="load_more13">더보기</a>
         </div>
-        <div id="menu14" class="container tab-pane fade">
+        <div id="category14" class="tab-pane fade">
           <p>기타(81)</p>
+          <div id="faq_container14"></div>
+          <a id="load_more14">더보기</a>
         </div>
       </article>
     </section>
