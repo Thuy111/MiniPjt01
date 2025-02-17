@@ -1,20 +1,4 @@
-/* 컨텐츠 전체 */
-#container {
-  width: 100%;
-}
-#container * {
-  margin: 0;
-  padding: 0;
-}
-#container ul {
-  list-style: none;
-}
-#container a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* 검색 영역 */
+/* 검색 영역*********************************************************************************** */
 #search {
   background: #FFE100;
   width: 100%;
@@ -26,6 +10,7 @@
 }
 #search h2 {
   margin-bottom: 30px;
+  font-size: 30px;
 }
 #question_box {
   background: #fafafa;
@@ -42,32 +27,62 @@
 #question {
   background: #fafafa;
   width: 490px;
-  font-size: 12px;
+  font-size: 15px;
   border: none;
   outline: none;
 }
 #serch_tags {
   margin-top: 30px;
-  font-size: 12px;
+  font-size: 15px;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-/* 자주묻는 질문 */
+/* 자주묻는 질문******************************************************************************* */
 #faq {
   color: black;
   width: 1155px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
-/* 질문 항목 */
-.nav {
+/* 카테고리****************************************** */
+#tab_list {
+  /* border: 1px solid #e6e6e6; */
   width: 100%;
-  font-size: 12px;
+  margin-bottom: 50px;
+  font-size: 15px;
+}
+a.nav-link {
+  border: 1px solid #e6e6e6;
+  border-left: none;
+  padding: 15px 19px;
+}
+#tab_list li:first-of-type a.nav-link {
+  border-left: 1px solid #e6e6e6;
 }
 
-/* 질문과 답변 */
+/* 질문과 답변************************************** */
 .tab-content {
   width: 1080px;
+}
+.tab-pane>a { /* 더보기 버튼 */
+  border-bottom: 1px solid #d0d0d0;
+  padding: 20px 10px;
+  text-align: center;
+  display: block;
+}
+[id^="faq_container"] { /* 카테고리별 faq 목록 */
+  border-top: 1px solid #e6e6e6;
+  margin-top: 20px;
+}
+.faq_content { /* 질문-답변 1묶음 */
+  border-bottom: 1px solid #e6e6e6;
+}
+.faq_content div { /* 질문 */
+  padding: 20px 10px;
+}
+.faq_content .collapse { /* 답변 */
+  border-top: 1px solid #e2e2e2;
+  background: #f4f4f4;
 }

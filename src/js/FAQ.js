@@ -34,25 +34,29 @@ $(document).ready(function () {
     for (let i = 0; i < Math.min(visibleItems[tabNumber], totalItems[tabNumber]); i++) {
       let item = dataCache[tabNumber][i];
 
-      if(!item.subcategory){
+      if (!item.subcategory) {
         faqHtml += `
-          <div id="content${tabNumber}-${i}">
-            <a data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
-            ${item.title}
-            </a>
-          </div>
-          <div id="collapse${tabNumber}-${i}" class="collapse" aria-labelledby="content${tabNumber}-${i}" data-parent="${faqContainer}">
-            ${item.content}
+          <div class="faq_content">
+            <div id="content${tabNumber}-${i}">
+              <a data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
+              ${item.title}
+              </a>
+            </div>
+            <div id="collapse${tabNumber}-${i}" class="collapse" aria-labelledby="content${tabNumber}-${i}" data-parent="${faqContainer}">
+              ${item.content}
+            </div>
           </div>`;
-      }else{
+      } else {
         faqHtml += `
-          <div id="content${tabNumber}-${i}">
-            <a data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
-            [${item.subcategory}] ${item.title}
-            </a>
-          </div>
-          <div id="collapse${tabNumber}-${i}" class="collapse" aria-labelledby="content${tabNumber}-${i}" data-parent="${faqContainer}">
-            ${item.content}
+          <div class="faq_content">
+            <div id="content${tabNumber}-${i}">
+              <a data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
+              [${item.subcategory}] ${item.title}
+              </a>
+            </div>
+            <div id="collapse${tabNumber}-${i}" class="collapse" aria-labelledby="content${tabNumber}-${i}" data-parent="${faqContainer}">
+              ${item.content}
+            </div>
           </div>`;
       }
     }
@@ -60,7 +64,7 @@ $(document).ready(function () {
     // HTML 업데이트
     $(faqContainer).html(faqHtml);
 
-    // 더보기 버튼 표시/숨김
+    // 더보기 버튼 표시/숨김 (데이터가 모두 로드된 경우 숨김)
     if (visibleItems[tabNumber] >= totalItems[tabNumber]) {
       $(loadMoreBtn).hide();
     } else {
@@ -73,7 +77,7 @@ $(document).ready(function () {
     let tabNumber = $(this).attr('id').replace('load_more', '');
     
     if (!visibleItems[tabNumber] || !totalItems[tabNumber]) {
-      console.error(`❌ 오류: ${tabNumber} 데이터가 존재하지 않음!`);
+      console.error(`오류: ${tabNumber} 데이터가 존재하지 않음!`);
       return;
     }
 
