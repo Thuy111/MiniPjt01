@@ -22,6 +22,8 @@
 
   <!-- Slick JS -->
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/e7c9242ec2.js" crossorigin="anonymous"></script>
   
 
   <link rel="stylesheet" href="/src/styles/about.css">
@@ -173,23 +175,53 @@
         <div>카카오뱅크 입출금통장에도 이자를 주나요?</div>
         <div>네. '카카오뱅크 입출금통장'도 기본금리가 제공되고 있으며, 매월 네번째 금요일을 기준으로 이자가 결산되어 토요일에 지급됩니다.</div>
       </div>
-      <div id="more_btn">질문 전체보기</div>
+      <div id="more_btn">질문 전체보기
+        <!-- <a href="FAQ.html"></a> 누르면 FAQ로 넘어가도록--> 
+      </div>
     </div>
   </div>
   <div class="insert_line"></div>
   
-  
+  <!-- 모달을 띄울 메뉴(버튼) ---------------------- -->
   <div class="product_container">
     <div id="more_info" class="info_setting">
-      <div>상품안내<span>&gt;</span></div>
-      <div>금리정보<span>&gt;</span></div>
-      <div>수수료정보<span>&gt;</span></div>
-      <div>기타사항<span>&gt;</span></div>
-      <div>상품설명서 및 이용약관<span>&gt;</span></div>
+      <div id="modal1" class="btn" data-toggle="modal" data-target="#myModal" style="cursor: pointer;">상품안내<span>&gt;</span></div>
+      <div id="modal2">금리정보<span>&gt;</span></div>
+      <div id="modal3">수수료정보<span>&gt;</span></div>
+      <div id="modal4">기타사항<span>&gt;</span></div>
+      <div id="modal5">상품설명서 및 이용약관<span>&gt;</span></div>
       <div></div>
     </div>
   </div>
+  <!-- 모달 창 5개 ----------------------------------------------------------------- -->
+
+   <!-- 시험용 모달 -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
   
+
+
+
+
+  <!-- 다른 상품 광고 (세이프박스 / 저금통) -------------- -->
   <div class="bg_color_set">
     <div class="product_container">
       <div id="ad_contents">
@@ -218,6 +250,7 @@
     </div>
   </div>
 
+  <!-- footer 설정 -------------------------------- -->
   <div class="footer_set_margin"></div>
   <footer></footer>
   <script>

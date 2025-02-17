@@ -218,6 +218,11 @@
 #more_info>div:hover{
   cursor: pointer;
 }
+/* 모달 설정 */
+
+
+
+/* 상품 광고 칸 */
 #safebox, #pigbank{
   margin-top: 50px;
   margin-right: 10px;
@@ -226,7 +231,6 @@
   border-radius: 7px;
   text-align: left;
 }
-/* 상품 광고 칸 */
 #safebox, #pigbank:hover{
   cursor: pointer;
 }
