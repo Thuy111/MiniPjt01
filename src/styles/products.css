@@ -1,26 +1,59 @@
-
-.test *{
+/* css배치 점검용 보더 */
+.test div, .test p{ 
   border: 1px solid #bbb;
 }
-nav{
-  margin-top: 130px;
-}
 
-
-
-.footer{
-  height: 300px;
-  background-color: #aaa;
-}
+/* 기본적인 배치를 위한 css */
 .product_container{
   text-align: center;
   margin: 0px 20%;
+  overflow: hidden;
 }
-#moving_panel{
-  width: 100%;
-  /* min-height: 200px; */
+.container_top_margin{
+  margin-top: 100px;
+}
+.bg_color_set{
+  background-color: #F7F7F7;
+}
+.slider_bg_set{
+  padding: 30px 0px;
+  padding-top: 50px;
   background-color: #23A662;
 }
+#moving_panel,#moving_panel2{
+  width: 100%;
+  min-height: 100px;
+  background-color: #23A662;
+}
+#moving_panel div:nth-child(odd){
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+#moving_panel div:nth-child(even) .color_set{
+  font-size: 36px;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 40px;
+  padding:5px 15px;
+  margin: 0px 10px;
+  margin-top: 5px;
+  text-align: center;
+  color: #23A662;
+}
+#moving_panel2 div:nth-child(odd) img{
+  width: 60px;
+  padding-top: 5px;
+}
+#moving_panel2 div:nth-child(even) p{
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0px 10px;
+  color: #fff;
+}
+
+
 
 .floating{
   float: left;
@@ -32,17 +65,170 @@ nav{
 .img_set{
   width: 400px;
 }
-.floatingbtn{
+.floating_icon{
   float: left;
+  width: 45px;
+  margin-right: 10px;
 }
 .floating2{
   float: left;
-  width: 30%;
+  width: 280px;
 }
 .img_icon_set{
-  width: 40px;
+  width: 100%;
 }
+
 #ad_contents{
   font-size: 16px;
-  height: 100px;
+}
+#question_panel{
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+.slider_margin{
+  margin-top: 120px;
+}
+.footer_set_margin{
+  padding-bottom: 195px;
+}
+.info_setting{
+  margin: 70px 0px;
+}
+.info_setting > div{
+  width: 49%;
+  display: inline-block;
+  position: relative;
+}
+.insert_line{
+  background-color: #F7F7F7;
+  width: 100%;
+  height: 10px;
+}
+
+/* font style / 글자가 들어간 패널들 */
+#subhead {
+  font-size: 28px;
+  color: #888888;
+  padding: 10px;
+}
+#mainhead{
+  font-size: 52px;
+  font-weight: bold;
+  margin-bottom: 100px;
+}
+#mainhead span{
+  color: #23A662;
+}
+
+#sub_content_left :nth-child(1){
+  font-size: 18px;
+  color: #888888;
+}
+#sub_content_left :nth-child(2){
+  font-size: 30px;
+  font-weight: bold;
+}
+#sub_content_right :nth-child(1){
+  font-size: 18px;
+  color: #888888;
+}
+#sub_content_right :nth-child(2){
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#content1,#content2,#content3,#content4,#content5{
+  text-align: left;
+  padding: 30px 0px;
+}
+#panel1,#panel2,#panel3,#panel4,#panel5{
+  transform: translateY(80px);
+}
+#subtext1, #subtext2, #subtext3, #subtext4, #subtext5{
+  font-size: 48px;
+  font-weight: bold;
+  color: #888888;
+}
+#maintext1,#maintext2,#maintext3,#maintext4,#maintext5{
+  font-size: 48px;
+  font-weight: bold;
+}
+#text1,#text2,#text3,#text4,#text5{
+  font-size: 18px;
+}
+.bg_color_set img{
+  transform: translateY(30px)
+}
+#question_panel :nth-child(1){
+  font-weight: bold;
+  text-align: left;
+}
+.p_title{
+  font-size: 24px;
+  padding: 30px 0px;
+}
+#q_panel1,#q_panel2{
+  background-color: #F7F7F7;
+  border-radius: 10px;
+  padding: 35px 30px;
+  margin: 5px 0px;
+  text-align: left;
+  color: #222222;
+}
+#q_panel1 :nth-child(n+2),#q_panel2 :nth-child(n+2){
+  color: #888888;
+}
+#q_panel1 :nth-child(2){
+  margin: 15px 0px;
+  margin-bottom: 25px;
+}
+#q_panel2 :nth-child(2){
+  margin-top: 15px;
+}
+#more_btn{
+  background-color: #E9E9E9;
+  border-radius: 10px;
+  padding: 15px 0px;
+  font-weight: bold;
+  color: #333333;
+}
+#more_info :nth-child(n+1):nth-child(-n+5){
+  background-color: #F7F7F7;
+  border-radius: 7px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 18px;
+  color: #3C3C3C;
+  text-align: left;
+  padding-left: 30px;
+}
+#more_info :nth-child(even){
+  margin-left: 1.5%;
+  margin-bottom: 5px;
+}
+#more_info>div>span{
+  position: absolute;
+  right: 15px;
+}
+#more_info>div:hover{
+  cursor: pointer;
+}
+#safebox, #pigbank{
+  margin-top: 50px;
+  margin-right: 10px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 7px;
+  text-align: left;
+}
+#safebox, #pigbank:hover{
+  cursor: pointer;
+}
+#signal_code{
+  font-size: 12px;
+  color: #666666;
+  text-align: right;
+  margin-right: 140px;
+  padding: 10px 0px;
+  margin-bottom: 50px;
 }
