@@ -28,7 +28,7 @@ $(document).ready(function () {
   // 데이터 로드 함수
   function loadItems(tabNumber) {
     let faqContainer = `#faq_container${tabNumber < 10 ? '0' : ''}${tabNumber}`;
-    let loadMoreBtn = `#load_more${tabNumber < 10 ? '0' : ''}${tabNumber}`;
+    let loadMoreBtn = `#load_more${tabNumber}`; 
 
     let faqHtml = "";
     for (let i = 0; i < Math.min(visibleItems[tabNumber], totalItems[tabNumber]); i++) {
@@ -65,9 +65,10 @@ $(document).ready(function () {
     $(faqContainer).html(faqHtml);
 
     // 더보기 버튼 표시/숨김 (데이터가 모두 로드된 경우 숨김)
-    if (visibleItems[tabNumber] >= totalItems[tabNumber]) {
+    if (visibleItems[tabNumber] >= totalItems[tabNumber]) {      
       $(loadMoreBtn).hide();
-    } else {
+    }
+    else {
       $(loadMoreBtn).show();
     }
   }
