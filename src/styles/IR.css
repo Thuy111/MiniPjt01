@@ -1,6 +1,7 @@
 /* IR 페이지 CSS */
 .container_ir {
   width: 1080px;
+  margin: 0 auto;
   padding:0 1.5rem 5rem 1.5rem;
   box-sizing: border-box;
 }
