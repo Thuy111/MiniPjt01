@@ -1,5 +1,5 @@
-
-.test *{
+/* css배치 점검용 보더 */
+.test *{ 
   border: 1px solid #bbb;
 }
 nav{
