@@ -13,7 +13,7 @@ $(document).ready(function(){
 
   // JSON 데이터 불러오기
   function loadCategoryData(tabNumber) {
-    let categoryFile = `../data/category${tabNumber < 10 ? '0' : ''}${tabNumber}.json`;
+    let categoryFile = `../data/faq_category${tabNumber < 10 ? '0' : ''}${tabNumber}.json`;
     $.getJSON(categoryFile, function (data) {
       dataCache[tabNumber] = data;
       totalItems[tabNumber] = data.length;
