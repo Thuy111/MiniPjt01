@@ -16,13 +16,18 @@
 </head>
 <body>
   <header></header>
- <!-- 코드작성 시작-------------------------------------------------------------------------------->
+ 
   <div id="container">
-    <div class="container-fluid text-center" >
-      <div class="container">
-        <P>일상에서 더 쉽게, 더 자주 이용하는 나만의 은행 </P>
-        <P> 카카오뱅크는 사람과 은행의 만남이 더 쉽게, 더 자주 일어나야 한다고 믿습니다.</P>
-        <P> 사용자 중심의 혁신적인 기술을 통해 일상 속 어떤 순간에서도 유용한 나만의 은행.</P>  
+    <!-- 카카오은행의 장점-------------------------------------------------------------------------------->
+    <div class="container-fluid text-center kakao" >
+      <div class="container ">
+        <h1>일상에서 더 쉽게, 더 자주 이용하는<br>
+          나만의 은행 </h1>
+        <div class="kakao_intro">
+            <P> 카카오뱅크는 사람과 은행의 만남이 더 쉽게, 더 자주 일어나야 한다고 믿습니다.</P>
+            <P> 사용자 중심의 혁신적인 기술을 통해 일상 속 어떤 순간에서도 유용한 나만의 은행.</P>  
+            <p>카카오뱅크는 또 하나의 은행이 아닌 '은행의 새로운 시작' 입니다.</p>
+        </div>
       </div>
     </div> 
     
@@ -37,14 +42,15 @@
   <!-- 브랜드 동영상----------------------------------------------------------------------------------->
    <div class="container-fluid video">
     <div class="container ">
-      <h4 class="text-center"> 
+      <h2 class="text-center"> 
         브랜드 영상  
-      </h4>
-      <div style="width: 100px; height: 2px; background: black; margin: 5px auto;"></div>
-      <div class="row">
+      </h2>
+      <div class="line" ></div>
+      <div class="row" id="video">
         <div class="col-sm-4">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="949" height="534" src="https://www.youtube.com/embed/ysPg4-mSIJo" title="[카카오뱅크 주택담보대출] 또 한 번 은행을 새롭게" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            
+          <div class="embed-responsive embed-responsive-16by9">   
+            <img id="video1" src="/src/assets/media/images/02about/video1.png" alt="Click to play video" width="100%">       
+            <iframe id="videoFrame1" width="300" height="200" src="" frameborder="0" allowfullscreen style="display: none;"></iframe>            
           </div>
           <p>#또 한 번 은행을 새롭게</p>
           <p>카카오뱅크 주택담보대출 전국 광역시까지 확대</p>
@@ -53,7 +59,8 @@
         </div>
         <div class="col-sm-4">
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="856" height="482" src="https://www.youtube.com/embed/qFfjq1QTm08" title="[카카오뱅크] 세상 모든 모임, 모임통장으로 모여라" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <img id="video2" src="/src/assets/media/images/02about/video2.png" alt="Click to play video" width="100%">   
+            <iframe id="videoFrame2" width="300" height="200" src="" frameborder="0" allowfullscreen style="display: none;"></iframe>  
           </div>
           <p>#세상 모든 모임</p>
           <p>친구, 가족, 연인, 동호인끼리</p>
@@ -61,7 +68,8 @@
         </div>
         <div class="col-sm-4">
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="856" height="482" src="https://www.youtube.com/embed/qFfjq1QTm08" title="[카카오뱅크] 세상 모든 모임, 모임통장으로 모여라" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <img id="video3" src="/src/assets/media/images/02about/video3.png" alt="Click to play video" width="100%">   
+            <iframe id="videoFrame3" width="300" height="200" src="" frameborder="0" allowfullscreen style="display: none;"></iframe>            
           </div>
           <p>#이미 모두의 은행</p>
           <p>한 사람, 한 사람을 위해 시작한 은행이</p>
@@ -72,10 +80,10 @@
    </div>
 
    <!-- BI소개---------------------------------------------------------------------------------------->
-   <div class="container-fluid">
+   <div class="container-fluid bi_intro">
     <div class="container text-center">
-      <p>BI소개</p>
-      <div style="width: 100px; height: 2px; background: black; margin: 5px auto;"></div>
+      <h2>BI소개</h2>
+      <div class="line" ></div>
       <div class="row">
         <div class="col-sm-12 biImg"></div>
       </div>
@@ -95,34 +103,64 @@
 </div>  <!--id="container"의 닫는 태그-->
    
 
-  <!-- Ajax로 은행의 History 구현현---------------------------------------------------------------------->
+  
   <script>
+// Ajax로 은행의 History 구현현 ---------------------------------------------------------------------
     $(document).ready(function() {
-        $.getJSON('/src/data/timeline.json', function(timelineData) {
-            let timelineContainer = $("#timeline");
+    $.getJSON("/src/data/timeline.json", function(timelineData) {
+        let timelineContainer = $("#timeline");
 
-            // Lấy danh sách năm, sắp xếp giảm dần
-            let sortedYears = Object.keys(timelineData).sort().reverse();
+        //  높은 열부터 시작
+        let sortedYears = Object.keys(timelineData).sort().reverse();
 
-            $.each(sortedYears, function(index, year) {
-                let events = timelineData[year]; // Lấy danh sách sự kiện của năm đó
-                let yearDiv = $("<div>").addClass("year").append($("<h2>").text(year));
-                let eventsList = $("<ul>");
+        $.each(sortedYears, function(index, year) {
+            let events = timelineData[year];
 
-                $.each(events, function(index, eventData) {
-                    let eventItem = $("<li>").html(`<strong>${eventData.month}</strong> ${eventData.event}`);
-                    eventsList.append(eventItem);
-                });
+            // 열, 월 담는 컨테이너
+            let yearRow = $("<div>").addClass("year-row");
+            let yearDiv = $("<div>").addClass("year").text(year);
+            let eventsContainer = $("<div>").addClass("events");
 
-                yearDiv.append(eventsList);
-                timelineContainer.append(yearDiv);
+            $.each(events, function(index, eventData) {
+                let eventItem = $("<div>").addClass("event")
+                    .append($("<div>").addClass("month").text(eventData.month))
+                    .append($("<div>").addClass("description").text(eventData.event));
+
+                eventsContainer.append(eventItem);
             });
+
+            yearRow.append(yearDiv).append(eventsContainer);
+            timelineContainer.append(yearRow);
         });
     });
+});
+
+// 브랜드 동영상 클릭 --------------------------------------------------------------------------------------
+$(document).ready(function() {
+    $("#video1").click(function() {
+        let videoURL = "https://www.youtube.com/embed/ysPg4-mSIJo"; 
+        $("#videoFrame1").attr("src", videoURL).show();
+        $(this).hide(); // 클릭한 후 이미지 사라지가
+    });
+    $("#video1").click(function() { 
+      $("iframe").addClass("border");
+    });
+   
+
+    $("#video2").click(function() {
+        let videoURL = "https://www.youtube.com/embed/qFfjq1QTm08"; 
+        $("#videoFrame2").attr("src", videoURL).show();
+        $(this).hide(); // 클릭한 후 이미지 사라지가
+    });
+    $("#video3").click(function() {
+        let videoURL = "https://www.youtube.com/embed/c85YxqEJwZE"; 
+        $("#videoFrame3").attr("src", videoURL).show();
+        $(this).hide(); // 클릭한 후 이미지 사라지가
+    });
+
+});
 </script>
 
-
-  
 
 
 
