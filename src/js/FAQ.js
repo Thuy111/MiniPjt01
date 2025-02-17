@@ -33,15 +33,27 @@ $(document).ready(function () {
     for (let i = 0; i < Math.min(visibleItems[tabNumber], totalItems[tabNumber]); i++) {
       let item = dataCache[tabNumber][i];
 
-      faqHtml += `
-        <div id="content${tabNumber}-${i}">
-          <a data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
+      if(!item.subcategory){
+        faqHtml += `
+          <div id="content${tabNumber}-${i}">
+            <a data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
             ${item.title}
-          </a>
-        </div>
-        <div id="collapse${tabNumber}-${i}" class="collapse" aria-labelledby="content${tabNumber}-${i}" data-parent="${faqContainer}">
-          ${item.content}
-        </div>`;
+            </a>
+          </div>
+          <div id="collapse${tabNumber}-${i}" class="collapse" aria-labelledby="content${tabNumber}-${i}" data-parent="${faqContainer}">
+            ${item.content}
+          </div>`;
+      }else{
+        faqHtml += `
+          <div id="content${tabNumber}-${i}">
+            <a data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
+            [${item.subcategory}] ${item.title}
+            </a>
+          </div>
+          <div id="collapse${tabNumber}-${i}" class="collapse" aria-labelledby="content${tabNumber}-${i}" data-parent="${faqContainer}">
+            ${item.content}
+          </div>`;
+      }
     }
 
     // HTML 업데이트
