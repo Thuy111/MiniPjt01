@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  // 검색 기능
+  // 검색 기능###################################################################################
   $('#question').on('keyup', function () {
     var value = $(this).val().toLowerCase();
     $('#faq *').filter(function () {
@@ -7,6 +7,7 @@ $(document).ready(function () {
     });
   });
 
+  // 아코디언 컨텐츠 내용########################################################################
   let dataCache = {};  // 각 카테고리별 데이터를 저장할 객체
   let visibleItems = {};  // 각 카테고리별로 표시할 항목의 개수
   let totalItems = {};    // 각 카테고리별 총 항목 개수
