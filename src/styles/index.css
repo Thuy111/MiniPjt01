@@ -1,0 +1,156 @@
+#container {
+  width: 100%;
+}
+#container * {
+  margin: 0;
+  padding: 0;
+}
+/* 01 css------------------------------------------------------- */
+#yellowbox{
+  background-color: #FFEF6B;
+  position: relative;
+  width: 1200px;
+  height: 884px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  margin: auto;
+  background-image: url(/src/assets/media/images/01index/00main3.png);
+}
+.main_title{
+  position:absolute;
+  display: block;
+  top: 135px;
+  left: 90px;
+  font-size:40px;
+  font-weight: bold;
+  text-align: left;
+}
+.title_sub1{
+  position:absolute;
+  display: block;
+  top: 290px;
+  left: 92px;
+  font-size:16px;
+  text-align: left;
+}
+.title_sub2{
+  position:absolute;
+  display: block;
+  top: 365px;
+  left: 92px;
+  font-size: 16px;
+  line-height: 1.95;
+}
+/* 버튼 스타일일  */
+.main_link1, .main_link2{
+  display: block;
+  width: 178px;
+  height: 56px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 12px;
+  font-size: 16.2px;
+  font-weight: bold;
+  line-height: 56px;
+  color: #333;
+  background: #fff;
+  text-align: center;
+}
+/* 버튼 위치 지정 부모요소로 지정정 */
+.btn_store {
+  position: relative;
+  top:480px;
+}
+.btn_store li:nth-child(1) a{
+  position:absolute;
+  list-style: none;
+  left:92px;
+}
+.btn_store li:nth-child(2) a{
+  position:absolute;
+  list-style: none;
+  left:280px;
+}
+.divider{
+  background-color: #FAFAFA;
+  height: 32px;
+}
+/* 02~06 css ----------------------------------------------------------*/
+#mobile02, #saving03 {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 750px; 
+  margin: 0 350px; /*상하좌우0 왼쪽오른쪽350 위에 버튼이랑 위치맞춤*/
+  display: flex; 
+  align-items: center; /* 세로 가운데 정렬 */
+  justify-content: center;
+}
+
+.content-wrapper {
+  display: flex; /* 이미지와 텍스트를 가로로 배치 */
+  align-items: center; /* 세로 가운데 정렬 */
+}
+
+/*이미지와 텍스트 사이 간격*/
+/* .image02, .image03 {
+  position: relative;
+  left:-150px; 
+  max-width: 100%;
+  height: auto;
+}*/
+
+
+#saving03 .image03{
+ left:80px; /*이미지와 텍스트 사이 간격*/
+}
+
+
+.text-content {
+  position: relative
+}
+
+#saving03 .text-content{
+  margin-left: -100px; /*위에 이미지랑 수직 맞춘거*/
+}
+
+.content1, .content3 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.content2, .content4 {
+  font-size: 16px;
+  /* line-height: 1.5; */
+  margin-bottom: 20px;
+}
+
+.sub_link1{
+  display: block;
+  background-color: #f6f6f6;
+  width: 258px;
+  height: 56px;
+  font-size: 16px;
+  line-height: 56px;
+  color: #333;
+  border-radius: 10px;
+  text-align: center;
+}
+.sub_link2{
+  float:left;
+  background-color: #f6f6f6;
+  width: 258px;
+  height: 56px;
+  font-size: 16px;
+  line-height: 56px;
+  color: #333;
+  border-radius: 10px;
+  text-align: center;
+}
+.divider{
+  display: block;
+  width: 100%;
+  height:32px;
+}
+
