@@ -3,13 +3,17 @@ $(document).ready(function(){
   $(".slider").slick( {
     autoplay: true,
     autoplaySpeed: 0,
-    speed:2000,
+    speed:3000,
     cssEase:"linear",
-    slidesToShow: 5,
+    slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnFocus: true,
     pauseOnHover: true,
-    // responsive: [ //반응형 설정
+    centerMode: false,
+    touchMove: false,
+    variableWidth: true,
+    infinite: true,
+    //, responsive: [ //반응형 설정
     //   // {
     //   //   breakpoint: 768,
     //   //   settings: {
@@ -25,4 +29,22 @@ $(document).ready(function(){
     // ]
 
   } );
+  $(".slider2").slick( {
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed:2000,
+    cssEase:"linear",
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    centerMode: false,
+    touchMove: false,
+    variableWidth: true,
+    infinite: true,
+  } );
+
+  
+
+
 });
