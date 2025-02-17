@@ -58,8 +58,13 @@ $(document).ready(function () {
   // 더보기 버튼 클릭 이벤트
   $(document).on('click', '[id^="load_more"]', function () {
     let tabNumber = $(this).attr('id').replace('load_more', '');
-    tabNumber = String(tabNumber).padStart(2, '0'); // 형식 맞추기
-    visibleItems[tabNumber] = Math.min(visibleItems[tabNumber] + 10, totalItems[tabNumber]); // 범위 초과 방지
+    
+    if (!visibleItems[tabNumber] || !totalItems[tabNumber]) {
+      console.error(`❌ 오류: ${tabNumber} 데이터가 존재하지 않음!`);
+      return;
+    }
+
+    visibleItems[tabNumber] += 10;  // 10개씩 추가
     loadItems(tabNumber);
   });
 
