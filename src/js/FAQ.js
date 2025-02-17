@@ -1,12 +1,12 @@
-$(document).ready(function(){
-  $('#question').on('keyup', function() {
+$(document).ready(function () {
+  // 검색 기능
+  $('#question').on('keyup', function () {
     var value = $(this).val().toLowerCase();
-    $('#faq *').filter(function() {
+    $('#faq *').filter(function () {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
 
-  //  #####ajax로 아코디언 내용 추가하기#######################################################################################################################
   let dataCache = {};  // 각 카테고리별 데이터를 저장할 객체
   let visibleItems = {};  // 각 카테고리별로 표시할 항목의 개수
   let totalItems = {};    // 각 카테고리별 총 항목 개수
@@ -58,7 +58,8 @@ $(document).ready(function(){
   // 더보기 버튼 클릭 이벤트
   $(document).on('click', '[id^="load_more"]', function () {
     let tabNumber = $(this).attr('id').replace('load_more', '');
-    visibleItems[tabNumber] += 10;
+    tabNumber = String(tabNumber).padStart(2, '0'); // 형식 맞추기
+    visibleItems[tabNumber] = Math.min(visibleItems[tabNumber] + 10, totalItems[tabNumber]); // 범위 초과 방지
     loadItems(tabNumber);
   });
 
