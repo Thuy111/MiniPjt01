@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="shortcut icon" href="/src/assets/icon/favicon.png" type="image/x-icon">
   <!-- jQuery/ajax -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- Bootstrap4 -->
@@ -19,55 +20,127 @@
 
   <div id="container">
     <!-- 코드작성 -->
-    <!-- 01. 메인 이미지 -------------------------------------------------------------------------------->
-    <div id="main01">
-       <div id="yellowbox">
-        <div class="main_content">
-          <h2 class="main_title">
-             이미 모두의 은행<br>지금은 카카오뱅크
-          </h2>
-          <p class="title_sub1">
-            한 사람, 한사람을 위해 시작한 은행이<br>더 많은 사람들이 찾는 모두의 은행이 되었습니다.
-          </p>
-          <p class="title_sub2">
-            보내고, 받고, 모으고, 쓰는<br>당신의 모든 일이 바뀌고 있습니다.
-          </p>
-          <ul class="btn_store">
-            <li>
-              <a class="main_link1" href="#"><img src="/src/assets/media/images/01index/00googlelogo.png">&nbsp;Google Play</a>
-            </li>
-            <li>
-              <a class="main_link2" href="#"><img src="/src/assets/media/images/01index/00apple.png">&nbsp;App Store</a>
-            </li>
-          </ul>
+    <!-- 01. 메인 이미지 폼/컨테이너 --------------------------------------------------------------------->
+    <div class="index_container lion_bg">
+      <div class="index_box">
+        <div id="index_header">
+          <h1 id="index_mainhead">이미 모두의 은행<br>지금은 카카오뱅크</h1>
+          <div id="index_subhead1">한 사람, 한사람을 위해 시작한 은행이 <br>더 많은 사람들이 찾는 모두의 은행이 되었습니다.</div><br>
+          <div id="index_subhead2">보내고, 받고, 모으고, 쓰는 당신의 모든 일이 바뀌고 있습니다.</div><br>
+          <div id="index_button1"><img src="/src/assets/media/images/01index/00googlelogo.png" alt="구글플레이로고">구글 플레이이</div>
+          <div id="index-button2"><img src="/src/assets/media/images/01index/00apple.png" alt="애플로고">App Store</div>
         </div>
-      </div>
-    <!-- 02. 모바일로 더 손쉬운 계좌개설, 간단한 이체----------------------------------------------------->
-    <div id="mobile02">
-      <div class="content-wrapper">
-        <img class="image02" src="/src/assets/media/images/01index/01withdrawal.png" alt="mobileimage">
-        <div class="text-content">
-          <h3 class="content1">모바일로 더 손쉬운<br>계좌개설, 간편한 이체</h3><br>
-          <p class="content2">
-            인증서, OTP 없이 계좌 개설이 간편합니다.<br>
-            여러 건의 이체도 몇번의 터치로 손쉽게 보낼 수 있습니다.
-          </p><br>
-          <a class="sub_link1" href="#">카카오뱅크 입출금통장</a>
-        </div>
-     
       </div>
     </div>
-    <!-- 03.우대조건 없이 합리적인 예금과 적금 --------------------------------------------------------->
-    <div class="divider"></div>
-   <div id="saving03">
-     <div class="text-content">
-       <h3 class="content3">우대조건 없이 <br>합리적인 예금과 적금</h3><br>
-       <p class="content4">기대했던 금리와 다르게 복잡한 우대조건에 실망한 적이 있었나요?<br>
-        카카오뱅크의 예금, 적금은 숨겨진 우대조건 없이 누구에게나 편리하고 합리적입니다.</p><br>
-        <a class="sub_link1" href="#">정기예금</a>
-        <a class="sub_link2" href="#">자유예금</a>
+    <!-- 02. ------------------------------------------------------------------------------------------->
+    <div class="index_container confo_box">
+      <div class="index_box"> 
+        <img src="/src/assets/media/images/01index/01withdrawal.png" alt="img">
+        <div class="content">
+          <div>모바일로 더 손쉬운<br> 계좌개설, 간편한 이체</div><br>
+          <div>인증서, OTP 없이 계좌 개설이 간편합니다.<br>
+            여러 건의 이체도 몇번의 터치로 손쉽게 보낼 수 있습니다.
+          </div><br>
+          <button class="btn btn-light">카카오뱅크 입출금 통장 ></button>
+        </div>
       </div>
-      <img class="image03" src="/src/assets/media/images/01index/main-savings.png" alt="savingimage">
+    </div>
+    
+    
+    <!-- 03. ------------------------------------------------------------------------------------------->
+    <div class="index_container saving_box">
+      <div class="index_box"> 
+        <div class="content">
+          <div>우대조건 없이 <br>합리적인 예금과 적금</div><br>
+          <div>기대했던 금리와 다르게 복잡한 우대조건에 실망한 적이 있었나요?<br>
+            카카오뱅크의 예금, 적금은 숨겨진 우대조건 없이 누구에게나 편리하고 합리적입니다
+          </div><br>
+          <button class="btn btn-light">정기예금 ></button>
+          <button class="btn btn-light">자유적금 ></button><br>
+          <img id=bottomimg2 src="/src/assets/media/images/01index/02main-savings-money.png">
+        </div>
+        <img src="/src/assets/media/images/01index/02main-savings.png" alt="img">
+      </div>
+    </div>
+    <!-- 04.-------------------------------------------------------------------------------------------->
+    <div class="index_container confo_box">
+      <div class="index_box"> 
+        <img src="/src/assets/media/images/01index/03moim.png">
+        <div class="content">
+          <div>함께 쓰고 같이 보는<br>모임통장</div><br>
+          <div>카카오톡 친구를 바로 모임통장에 초대하고<br>
+            친구들과 함께 잔액과 입출금 현황을 확인할 수 있습니다.
+          </div><br>
+          <button class="btn btn-light">모임통장></button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 05 -------------------------------------------------------------------------------------------->
+    <div class="index_container weeks_box">
+      <div class="index_box"> 
+        <div class="content">
+          <div>함께 도전해서 <br>재미있는 26주 적금</div><br>
+          <div>26주동안 변화하는 재미에 빠져있는 사이<br>어느덧 만기 달성 경험을 맛보게 됩니다.
+          </div><br>
+          <button class="btn btn-light">26주적금 ></button><br>
+        </div>
+        <img src="/src/assets/media/images/01index/04_26weeks.png" alt="img">
+      </div>
+    </div>
+    <!-- 06--------------------------------------------------------------------------------------------->
+    <div class="index_container overseas_box">
+      <div class="index_box"> 
+        <img src="/src/assets/media/images/01index/05foreign-new.png" alt="img">
+        <div class="content">
+          <div>해외계좌송금과<br>WU빠른해외송금을<br>더 쉽고, 저렴하게</div><br>
+          <div>해외계좌송금이 가능한 22개국을 포함하여<br>
+            전세계 200여개국으로<br>WU빠른해외송금이 가능합니다.
+          </div><br>
+          <button class="btn btn-light">해외송금></button>
+        </div>
+      </div>
+    </div>
+    <!-- 07.-------------------------------------------------------------------------------------------->
+    <div class="index_container sky_bg">
+      <div class="index_box">
+        <div id="sky_header">
+          <h1 id="sky_mainhead">복잡한 서류 제출을 간편하게, 내가 원하는 시간에에</h1>
+          <div id="sky_subhead1">이사 날짜가 주말이나 공유일일이어도 전월세보증금 대출을 신청할 수 있습니다.</div><br>
+          <button class="btn btn-light">마이너스 통장대출></button>
+          <button class="btn btn-light">신용대출></button>
+          <button class="btn btn-light">개인사업자 대출></button>
+          <button class="btn btn-light">전월세보증금 대출></button><br>
+        </div>
+        <img src="/src/assets/media/images/01index/06loan.png" alt="img">
+      </div>
+    </div>
+    <!-- 08. ------------------------------------------------------------------------------------------->
+    <div class="index_container checkcard_bg">
+      <div class="index_box">
+        <div id="checkcard_header">
+          <h1 id="checkcard_mainhead">프렌즈 체크카드,<br>내가 고르는 선택의 즐거움</h1>
+          <div id="checkcard_subhead1">프렌즈 디자인부터 멋스러운 블랙 컬러 카드까지 원하는 디자인과 기능을 선택할 수 있습니다.</div><br>
+        </div>
+        <img src="#" alt="img">
+      </div>
+    </div>
+    <!-- 09.-------------------------------------------------------------------------------------------->
+    <div class="index_container it_bg">
+      <div class="index_box">
+        <div id="it_header">
+          <h1 id="it_mainhead">IT 기술로 카카오뱅크를<br>만들어 갑니다.</h1>
+          <div id="it_subhead1">프렌즈 디자인부터 멋스러운 블랙 컬러 카드까지 원하는 디자인과 기능을 선택할 수 있습니다.</div><br>
+        </div>
+        <h3>간결하고, 유려하게</h3>
+        <p>작은 모바일 화면에 적합하도록<br>복잡함을 덜어낸<br>유려하고 친화적인 UX</p>
+        <h3>간편한 인증, 철저한 보안</h3>
+        <p>지문, 비밀번호로 간편한 인증<br>IT기술의 강력한 보안 검증과<br>데이터 암호화</p>
+        <h3>Mobile First, One App</h3>
+        <p>모바일에서 뱅킹이 더 쉽고 편리하게<br>여러 앱을 설치할 필요없이<br>하나의 앱으로</p>
+
+      </div>
+    </div>
   </div>
 
 

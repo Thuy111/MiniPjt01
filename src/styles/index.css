@@ -1,155 +1,108 @@
-#container {
-  width: 100%;
+/* reusable css */
+.index_container {width: 100%;}
+.index_box{width: 1020px; margin: 0 auto;}
+.content>div:first-child {font-size: 40px;font-weight: bold;line-height: 1.35;}
+.index_container:not(:first-child) .index_box {
+  height: 750px;
+  display: flex;
+  /* justify */
+  justify-content: space-between;
+  /* align */
+  align-items: center;
 }
-#container * {
-  margin: 0;
-  padding: 0;
-}
-/* 01 css------------------------------------------------------- */
-#yellowbox{
-  background-color: #FFEF6B;
-  position: relative;
-  width: 1200px;
-  height: 884px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 1;
-  margin: auto;
-  background-image: url(/src/assets/media/images/01index/00main3.png);
-}
-.main_title{
-  position:absolute;
-  display: block;
-  top: 135px;
-  left: 90px;
-  font-size:40px;
-  font-weight: bold;
-  text-align: left;
-}
-.title_sub1{
-  position:absolute;
-  display: block;
-  top: 290px;
-  left: 92px;
-  font-size:16px;
-  text-align: left;
-}
-.title_sub2{
-  position:absolute;
-  display: block;
-  top: 365px;
-  left: 92px;
-  font-size: 16px;
-  line-height: 1.95;
-}
-/* 버튼 스타일일  */
-.main_link1, .main_link2{
-  display: block;
-  width: 178px;
+button{
+  background-color: #f6f6f6;
+  width: 158px;
   height: 56px;
-  border: 1px solid rgba(255, 255, 255, .3);
-  border-radius: 12px;
-  font-size: 16.2px;
-  font-weight: bold;
+  font-size: 16px;
   line-height: 56px;
   color: #333;
-  background: #fff;
+  border-radius: 10px;
   text-align: center;
 }
-/* 버튼 위치 지정 부모요소로 지정정 */
-.btn_store {
-  position: relative;
-  top:480px;
+
+/* index--------------------------------------------------- */
+/* 01 */
+.index_container.lion_bg {
+  background: url("/src/assets/media/images/01index/00main3.png");
+  background-size: cover;
+  height: 720px;
 }
-.btn_store li:nth-child(1) a{
-  position:absolute;
-  list-style: none;
-  left:92px;
-}
-.btn_store li:nth-child(2) a{
-  position:absolute;
-  list-style: none;
-  left:280px;
-}
-.divider{
-  background-color: #FAFAFA;
-  height: 32px;
-}
-/* 02~06 css ----------------------------------------------------------*/
-#mobile02, #saving03 {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  height: 750px; 
-  margin: 0 350px; /*상하좌우0 왼쪽오른쪽350 위에 버튼이랑 위치맞춤*/
-  display: flex; 
-  align-items: center; /* 세로 가운데 정렬 */
+/* 07.sky --------------------------------------------------*/
+/* 07. sky bg */
+.index_container.sky_bg {
+  background: url();
+  background-size: cover;
+  height: 720px;
+  background-color: #333B58;
+  color : white;
+  display: flex;
   justify-content: center;
-}
-
-.content-wrapper {
-  display: flex; /* 이미지와 텍스트를 가로로 배치 */
-  align-items: center; /* 세로 가운데 정렬 */
-}
-
-/*이미지와 텍스트 사이 간격*/
-/* .image02, .image03 {
-  position: relative;
-  left:-150px; 
-  max-width: 100%;
-  height: auto;
-}*/
-
-
-#saving03 .image03{
- left:80px; /*이미지와 텍스트 사이 간격*/
-}
-
-
-.text-content {
-  position: relative
-}
-
-#saving03 .text-content{
-  margin-left: -100px; /*위에 이미지랑 수직 맞춘거*/
-}
-
-.content1, .content3 {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.content2, .content4 {
-  font-size: 16px;
-  /* line-height: 1.5; */
-  margin-bottom: 20px;
-}
-
-.sub_link1{
-  display: block;
-  background-color: #f6f6f6;
-  width: 258px;
-  height: 56px;
-  font-size: 16px;
-  line-height: 56px;
-  color: #333;
-  border-radius: 10px;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
+  
 }
-.sub_link2{
-  float:left;
-  background-color: #f6f6f6;
-  width: 258px;
-  height: 56px;
-  font-size: 16px;
-  line-height: 56px;
-  color: #333;
-  border-radius: 10px;
+/* 07. sky stars */
+
+
+/* 08.체크카드드 */
+.index_container.checkcard_bg {
+  background: url();
+  background-size: cover;
+  height: 1062px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
+  
 }
-.divider{
-  display: block;
-  width: 100%;
-  height:32px;
+/* 09.IT */
+.index_container.it_bg {
+  background: url();
+  background-size: cover;
+  height: 1176px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  
+}
+/* 이미지 크기들------------------------------------------- */
+.index_container.confo_box img {
+  width: 473px;
+  height: 678px;
+}
+.index_container.saving_box #bottomimg2 {
+  width: 420px;
+  height: 104px;
+  margin-top: 10px;
+}
+.index_container.saving_box img {
+  width: 409px;
+  height: 722px;
+}
+.index_container.moim_box img {
+  width: 459px;
+  height: 607px;
+}
+.index_container.weeks_box img {
+  width: 492px;
+  height: 408px;
+}
+.index_container.overseas_box img {
+  width: 408px;
+  height: 715px;
+}
+.index_container.overseas_box{
+  background-image: url(/src/assets/media/images/01index/05map.png);
+  background-repeat: no-repeat;
+  background-position: -150px; center;
+  height: 750px;
+}
+.index_container.sky_bg img{
+  width: 429px;
+  height: 563px;
 }
