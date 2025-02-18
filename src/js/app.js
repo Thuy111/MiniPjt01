@@ -193,7 +193,7 @@ $(document).ready(function(){
   location = location[0];
   // console.log(location);
   
-  if(location == 'index'){
+  if(location == 'index'||location == 'products'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
     $('nav#main_nav').css({
       'background-color': '#fff',
@@ -207,15 +207,19 @@ $(document).ready(function(){
       'color': 'rgb(68, 68, 68)',
       'border': '1px solid rgba(229, 229, 229, 0.8)'
     });
+    if(location == 'products'){
+      $('nav#main_nav>ul>ul>li>a').removeClass('active');
+      $('nav#main_nav>ul>ul>li:nth-child(3)>a').addClass('active');
+      $('nav#main_nav a.active').css('border-bottom', '3px solid black');
+    }
   }else if(location == 'about'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
-    $('nav#main_nav>ul>ul>li:nth-child(1)>a').addClass('active');
+    $('nav#main_nav>ul>ul>li:nth-child(1)>a').addClass('active');    
+    // elseCss();
   }else if(location == 'IR'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
     $('nav#main_nav>ul>ul>li:nth-child(2)>a').addClass('active');
-  }else if(location == 'products'){
-    $('nav#main_nav>ul>ul>li>a').removeClass('active');
-    $('nav#main_nav>ul>ul>li:nth-child(3)>a').addClass('active');
+    // elseCss();
   }else if(location == 'FAQ'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
     $('nav#main_nav>ul>ul>li:nth-child(4)>a').addClass('active');
@@ -233,15 +237,36 @@ $(document).ready(function(){
       'border': '1px solid rgba(229, 229, 229, 0.8)'
     });
   }
+
+  function elseCss(){
+    $('nav#main_nav').css({
+      'background-color': '#313955',
+      'color': 'white'
+    });
+    $('nav#main_nav').css('border-bottom', '1px solid rgba(0, 0, 0, 0)');
+    $('nav#main_nav>ul>li h1').css('color', 'white');
+    $('nav#main_nav>ul>ul>li>a').css('color', 'white');
+    $('nav#main_nav a.active').css('border-bottom', '3px solid white');
+    $('nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site').css({
+      'background-color': 'rgba(34,34,34,0.2)',
+      'color': 'white',
+      'border': '1px solid rgba(34, 34, 34, 0.1)'
+    });
+  };
     
 
   // dropdown menu-----------------------------------------------
-  $('nav#main_nav>ul>ul>li>a').on('mousemove', function(event){
-    getMenuData(event);
+  $('nav#main_nav>ul>ul>li>a').on('mouseenter', function(event){
+    if(!location == 'index'){
+      // 처음 메뉴를 눌렀을때 드롭다운이 바로 나오지 않도록 조건 추가 (visited)
+      if(visited){getMenuData(event);}else return;
+    }else {
+      getMenuData(event);
+    }
   });
+
   function getMenuData(e){
     const menu = e.target.innerText;
-    
     if(menu == '은행소개'||menu == 'IR투자정보'||menu == '상품안내'||menu == '고객센터'){
       $('.nav_dropdown').css({'display': 'flex'});
 
@@ -274,12 +299,14 @@ $(document).ready(function(){
   };
 
   // navigation css animation(mouse&scroll) -----------------------------------
-  $('nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a').on('mousemove', function(){activeNav();});
+  let visited = false;
+  $('nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a').on('mouseenter', function(){activeNav();});
+  $('nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a').on('mouseenter', function(){visited = true;});
   $('nav#main_nav').on('mouseleave', function(){
     inactiveNav();
     $('.nav_dropdown').css({'display': 'none'});
   });
-  $('nav#main_nav>ul>ul>li:nth-last-child(-n+2)').on('mousemove', function(){
+  $('nav#main_nav>ul>ul>li:nth-last-child(-n+2)').on('mouseenter', function(){
     inactiveNav();
     $('.nav_dropdown').css({'display': 'none'});
   });
@@ -313,7 +340,7 @@ $(document).ready(function(){
     if(scrollY > 40){
       return;
     }else{
-      if(location == 'index'){
+      if(location == 'index'||location == 'products'){
         $('nav#main_nav').css({
           'background-color': '#fff',
           'color': 'black'
