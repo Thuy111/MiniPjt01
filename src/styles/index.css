@@ -42,12 +42,34 @@ button.short{
 /* 01 */
 .index_container.lion_bg {
   background-color: #FFEF6B;
-  background-image: url("/src/assets/media/images/01index/00main3.png");
-  background-size: 63%;
-  background-repeat: no-repeat; 
-  background-position: center -1%;
   width: 100%;
   height: 720px;
+  position: relative;
+}
+#index_header {
+  position: relative;
+  z-index: 10;
+}
+.index_bg {
+  position: absolute;
+  height: 128px;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  bottom: 0px;
+  z-index: 1;
+}
+.index_lion_bg {
+  background-image: url("/src/assets/media/images/01index/00main3.png");
+  background-size: cover;
+  background-position: 0 -20px;
+  background-repeat: no-repeat; 
+  /* background-position: center 100px; */
+  height: 620px;
+  width: 1020px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  position: absolute;
 }
 
 /* 01 텍스트 배치 -------------------------------------------*/
@@ -138,30 +160,83 @@ button.short{
 
 
 /* 08.체크카드---------------------------------------------------- */
+#checkcard_mainhead{
+  font-size: 40px;
+  font-weight: bold;
+}
+.card_box {position: relative;text-align: center;margin: 2rem auto;} 
 .index_container.checkcard_bg {
   background: url();
   background-size: cover;
-  height: 800px;
+  height: 900px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  
 }
-.index_container #checkcard_mainhead{
-  font-size: 40px;
-  font-weight: bold;
-  margin-top: -400px;
+.slide:not([class~=slick-center]) img {
+  height: 360px;
 }
-#checkcard_header{
+
+.slide {
+  height: 441px;
   position: relative;
-  z-index: 100;
-  text-align: center;
-  top: 10px;
-  margin-left:200px;
-  margin-top:500px;
 }
+.slide img {
+  transition: all 0.35s;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.controll-card {
+  width: 750px;
+  height: 441px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+.slick-arrow i {
+  font-size: 40px;
+}
+.slick-arrow .fa-chevron-left {
+  position: absolute;
+  right: 350px;
+}
+.slick-arrow .fa-chevron-right {
+  position: absolute;
+  left: 350px;
+}
+.controll-card i {
+  color: lightgray;
+  font-size: 40px;
+  cursor: pointer;
+}
+.controll-card i:hover{color: black;}
+
+
+
+
+
+
+
+
+
+
 
 /* 09.IT------------------------------------------------- */
 .index_container.it_bg {
@@ -247,7 +322,7 @@ button.short{
 .index_container.overseas_box{
   background-image: url(/src/assets/media/images/01index/05map.png);
   background-repeat: no-repeat;
-  background-position: -150px; center;
+  background-position: -150px;
   height: 750px;
 }
 .index_container.sky_bg img{
