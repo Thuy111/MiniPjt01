@@ -183,6 +183,14 @@ $(document).ready(function(){
   };
   let dropData = [];
 
+  // 이전 페이지
+  // let previousPage = document.referrer; // 이전 페이지의 URL
+  // previousPage = previousPage.split('/');
+  // previousPage = previousPage[previousPage.length-1];
+  // previousPage = previousPage.split('.');
+  // previousPage = previousPage[0];
+  // console.log(previousPage);
+  
 
   // Header-Navigation -------------------------------------------
   // navigation focus menu
@@ -214,12 +222,12 @@ $(document).ready(function(){
     }
   }else if(location == 'about'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
-    $('nav#main_nav>ul>ul>li:nth-child(1)>a').addClass('active');    
-    // elseCss();
+    $('nav#main_nav>ul>ul>li:nth-child(1)>a').addClass('active');   
+    elseCss();
   }else if(location == 'IR'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
     $('nav#main_nav>ul>ul>li:nth-child(2)>a').addClass('active');
-    // elseCss();
+    elseCss();
   }else if(location == 'FAQ'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
     $('nav#main_nav>ul>ul>li:nth-child(4)>a').addClass('active');
@@ -367,7 +375,6 @@ $(document).ready(function(){
   $('#rel_site').on('click', function(event){
     event.stopPropagation(); // 이벤트 전파 방지
     if(!isClicked){
-      console.log('clicked');
       $('#rel_site .fa-chevron-down').css('transform', 'rotate(-180deg)');
       $('.rel_drop').css({
         'opacity': '1',
