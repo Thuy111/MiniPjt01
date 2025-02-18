@@ -183,6 +183,15 @@ $(document).ready(function(){
   };
   let dropData = [];
 
+  // 이전 페이지
+  // let previousPage = document.referrer; // 이전 페이지의 URL
+  // previousPage = previousPage.split('/');
+  // previousPage = previousPage[previousPage.length-1];
+  // previousPage = previousPage.split('.');
+  // previousPage = previousPage[0];
+  // console.log(previousPage);
+  
+
   // Header-Navigation -------------------------------------------
   // navigation focus menu
   let location = window.location.href;
@@ -192,29 +201,80 @@ $(document).ready(function(){
   location = location[0];
   // console.log(location);
   
-  if(location == 'index'){
+  if(location == 'index'||location == 'products'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
+    $('nav#main_nav').css({
+      'background-color': '#fff',
+      'color': 'black'
+    });
+    $('nav#main_nav').css('border-bottom', '1px solid rgba(0, 0, 0, 0.1)');
+    $('nav#main_nav>ul>li h1').css('color', 'black');
+    $('nav#main_nav>ul>ul>li>a').css('color', 'black');
+    $('nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site').css({
+      'background-color': 'rgba(244, 244, 244, 0.8)',
+      'color': 'rgb(68, 68, 68)',
+      'border': '1px solid rgba(229, 229, 229, 0.8)'
+    });
+    if(location == 'products'){
+      $('nav#main_nav>ul>ul>li>a').removeClass('active');
+      $('nav#main_nav>ul>ul>li:nth-child(3)>a').addClass('active');
+      $('nav#main_nav a.active').css('border-bottom', '3px solid black');
+    }
   }else if(location == 'about'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
-    $('nav#main_nav>ul>ul>li:nth-child(1)>a').addClass('active');
+    $('nav#main_nav>ul>ul>li:nth-child(1)>a').addClass('active');   
+    elseCss();
   }else if(location == 'IR'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
     $('nav#main_nav>ul>ul>li:nth-child(2)>a').addClass('active');
-  }else if(location == 'products'){
-    $('nav#main_nav>ul>ul>li>a').removeClass('active');
-    $('nav#main_nav>ul>ul>li:nth-child(3)>a').addClass('active');
+    elseCss();
   }else if(location == 'FAQ'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
     $('nav#main_nav>ul>ul>li:nth-child(4)>a').addClass('active');
+    $('nav#main_nav a.active').css('border-bottom', '3px solid black');
+    $('nav#main_nav').css({
+      'background-color': '#ffe100',
+      'color': 'black'
+    });
+    $('nav#main_nav').css('border-bottom', '1px solid rgba(0, 0, 0, 0.1)');
+    $('nav#main_nav>ul>li h1').css('color', 'black');
+    $('nav#main_nav>ul>ul>li>a').css('color', 'black');
+    $('nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site').css({
+      'background-color': 'rgba(244, 244, 244, 0.8)',
+      'color': 'rgb(68, 68, 68)',
+      'border': '1px solid rgba(229, 229, 229, 0.8)'
+    });
   }
+
+  function elseCss(){
+    $('nav#main_nav').css({
+      'background-color': '#313955',
+      'color': 'white'
+    });
+    $('nav#main_nav').css('border-bottom', '1px solid rgba(0, 0, 0, 0)');
+    $('nav#main_nav>ul>li h1').css('color', 'white');
+    $('nav#main_nav>ul>ul>li>a').css('color', 'white');
+    $('nav#main_nav a.active').css('border-bottom', '3px solid white');
+    $('nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site').css({
+      'background-color': 'rgba(34,34,34,0.2)',
+      'color': 'white',
+      'border': '1px solid rgba(34, 34, 34, 0.1)'
+    });
+  };
     
-  // dropdown menu
+
+  // dropdown menu-----------------------------------------------
   $('nav#main_nav>ul>ul>li>a').on('mouseenter', function(event){
-    getMenuData(event);
+    if(!location == 'index'){
+      // 처음 메뉴를 눌렀을때 드롭다운이 바로 나오지 않도록 조건 추가 (visited)
+      if(visited){getMenuData(event);}else return;
+    }else {
+      getMenuData(event);
+    }
   });
+
   function getMenuData(e){
     const menu = e.target.innerText;
-    
     if(menu == '은행소개'||menu == 'IR투자정보'||menu == '상품안내'||menu == '고객센터'){
       $('.nav_dropdown').css({'display': 'flex'});
 
@@ -246,8 +306,10 @@ $(document).ready(function(){
     }
   };
 
-  // navigation css animation
+  // navigation css animation(mouse&scroll) -----------------------------------
+  let visited = false;
   $('nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a').on('mouseenter', function(){activeNav();});
+  $('nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a').on('mouseenter', function(){visited = true;});
   $('nav#main_nav').on('mouseleave', function(){
     inactiveNav();
     $('.nav_dropdown').css({'display': 'none'});
@@ -266,8 +328,10 @@ $(document).ready(function(){
     }
   });
 
-  // navigation 활성화
+  // navigation 활성화 함수
   function activeNav(){
+    $('nav#main_nav>ul>li h1').css('color', 'black');
+    $('nav#main_nav>ul>ul>li>a').css('color', 'black');
     $('nav#main_nav a.active').css('border-bottom', '3px solid #313955');
     $('nav#main_nav').css({
       'background-color': 'white',
@@ -278,28 +342,31 @@ $(document).ready(function(){
       'color': 'rgb(68, 68, 68)',
       'border': '1px solid rgba(229, 229, 229, 0.8)'
     });
-    $('nav#main_nav>ul>li h1').css('color', 'black');
-    $('nav#main_nav>ul>ul>li>a').css('color', 'black');
   }
-  // navigation 비활성화
+  // navigation 비활성화 (menu에 따라 다르므로 조건을 다르게)
   function inactiveNav(){
-    if(scrollY > 40){      
+    if(scrollY > 40){
       return;
     }else{
-      console.log('inactive');
-      
-      $('nav#main_nav a.active').css('border-bottom', '3px solid white');
-      $('nav#main_nav').css({
-        'background-color': '#313955',
-        'border-bottom': '1px solid rgba(0, 0, 0, 0)'
-      });
-      $('nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site').css({
-        'background-color': 'rgba(34,34,34,0.2)',
-        'color': 'white',
-        'border': '1px solid rgba(34, 34, 34, 0.1)'
-      });
-      $('nav#main_nav>ul>li h1').css('color', 'white');
-      $('nav#main_nav>ul>ul>li>a').css('color', 'white');
+      if(location == 'index'||location == 'products'){
+        $('nav#main_nav').css({
+          'background-color': '#fff',
+          'color': 'black'
+        });
+      }else if(location == 'FAQ'){
+        $('nav#main_nav').css('background-color', '#ffe100');
+        $('nav#main_nav').css('border-bottom', '1px solid rgba(0, 0, 0, 0.1)');
+      }else{
+        $('nav#main_nav a.active').css('border-bottom', '3px solid white');
+        $('nav#main_nav').css('background-color', '#313955');
+        $('nav#main_nav>ul>li h1').css('color', 'white');
+        $('nav#main_nav>ul>ul>li>a').css('color', 'white');
+        $('nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site').css({
+          'background-color': 'rgba(34,34,34,0.2)',
+          'color': 'white',
+          'border': '1px solid rgba(34, 34, 34, 0.1)'
+        });
+      }
     }
   };
 
@@ -308,7 +375,6 @@ $(document).ready(function(){
   $('#rel_site').on('click', function(event){
     event.stopPropagation(); // 이벤트 전파 방지
     if(!isClicked){
-      console.log('clicked');
       $('#rel_site .fa-chevron-down').css('transform', 'rotate(-180deg)');
       $('.rel_drop').css({
         'opacity': '1',
