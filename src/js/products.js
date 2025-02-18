@@ -1,4 +1,32 @@
 $(document).ready(function(){
+
+  $(window).on('scroll', function() {
+    var scrollpos = $(window).scrollTop(); // 현재 스크롤 위치
+    var content01 = $('#content1').offset().top; // #content1 요소의 화면에서의 위치
+    var content02 = $('#content2').offset().top;
+    var content03 = $('#content3').offset().top;
+    var content04 = $('#content4').offset().top;
+    var content05 = $('#content5').offset().top;
+
+    console.log(scrollpos);
+    // 스크롤 값이 400을 넘고, #content1이 화면에 나타나면 애니메이션을 추가
+    if (scrollpos + $(window).height() > content01 + 100) {
+      $('#content1').addClass('animate__animated animate__fadeInUp').css('opacity', '1');
+    }
+    if (scrollpos + $(window).height() > content02 + 100) {
+      $('#content2').addClass('animate__animated animate__fadeInUp').css('opacity', '1');
+    }
+    if (scrollpos + $(window).height() > content03 + 100) {
+      $('#content3').addClass('animate__animated animate__fadeInUp').css('opacity', '1');
+    }
+    if (scrollpos + $(window).height() > content04 + 100) {
+      $('#content4').addClass('animate__animated animate__fadeInUp').css('opacity', '1');
+    }
+    if (scrollpos + $(window).height() > content05 + 100) {
+      $('#content5').addClass('animate__animated animate__fadeInUp').css('opacity', '1');
+    }
+  });
+
   //캐러셀
   $(".slider").slick( { // 첫번쩨 슬라이더 설정
     autoplay: true,
@@ -7,8 +35,8 @@ $(document).ready(function(){
     cssEase:"linear",
     slidesToShow: 1,
     slidesToScroll: 1,
-    pauseOnFocus: false,
-    pauseOnHover: false,
+    pauseOnFocus: true,
+    pauseOnHover: true,
     centerMode: false,
     touchMove: false,
     variableWidth: true,
@@ -21,8 +49,8 @@ $(document).ready(function(){
     cssEase:"linear",
     slidesToShow: 1,
     slidesToScroll: 1,
-    pauseOnFocus: false,
-    pauseOnHover: false,
+    pauseOnFocus: true,
+    pauseOnHover: true,
     centerMode: false,
     touchMove: false,
     variableWidth: true,
