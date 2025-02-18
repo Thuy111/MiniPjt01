@@ -48,8 +48,8 @@
       <div class="line" ></div>
       <div class="row" id="video">
         <div class="col-sm-4">
-          <div class="embed-responsive embed-responsive-16by9">   
-            <img id="video1" src="/src/assets/media/images/02about/video1.png" alt="Click to play video" width="100%">       
+          <div class="embed-responsive embed-responsive-16by9" id="video_wrapper1">   
+            <img id="videoImg1" src="/src/assets/media/images/02about/video1.png" alt="Click to play video" width="100%">       
             <iframe id="videoFrame1" width="300" height="200" src="" frameborder="0" allowfullscreen style="display: none;"></iframe>            
           </div>
           <p>#또 한 번 은행을 새롭게</p>
@@ -58,8 +58,8 @@
          
         </div>
         <div class="col-sm-4">
-          <div class="embed-responsive embed-responsive-16by9">
-            <img id="video2" src="/src/assets/media/images/02about/video2.png" alt="Click to play video" width="100%">   
+          <div class="embed-responsive embed-responsive-16by9" id="video_wrapper2">
+            <img id="videoImg2" src="/src/assets/media/images/02about/video2.png" alt="Click to play video" width="100%">   
             <iframe id="videoFrame2" width="300" height="200" src="" frameborder="0" allowfullscreen style="display: none;"></iframe>  
           </div>
           <p>#세상 모든 모임</p>
@@ -67,8 +67,8 @@
           <p>요즘엔 다 여기서 모임</p>
         </div>
         <div class="col-sm-4">
-          <div class="embed-responsive embed-responsive-16by9">
-            <img id="video3" src="/src/assets/media/images/02about/video3.png" alt="Click to play video" width="100%">   
+          <div class="embed-responsive embed-responsive-16by9" id="video_wrapper3">
+            <img id="videoImg3" src="/src/assets/media/images/02about/video3.png" alt="Click to play video" width="100%">   
             <iframe id="videoFrame3" width="300" height="200" src="" frameborder="0" allowfullscreen style="display: none;"></iframe>            
           </div>
           <p>#이미 모두의 은행</p>
@@ -103,63 +103,113 @@
 </div>  <!--id="container"의 닫는 태그-->
    
 
+<script>
+  // Ajax로 은행의 History 구현현 ---------------------------------------------------------------------
+      $(document).ready(function() {
+      $.getJSON("/src/data/timeline.json", function(timelineData) {
+          let timelineContainer = $("#timeline");
   
-  <script>
-// Ajax로 은행의 History 구현현 ---------------------------------------------------------------------
-    $(document).ready(function() {
-    $.getJSON("/src/data/timeline.json", function(timelineData) {
-        let timelineContainer = $("#timeline");
-
-        //  높은 열부터 시작
-        let sortedYears = Object.keys(timelineData).sort().reverse();
-
-        $.each(sortedYears, function(index, year) {
-            let events = timelineData[year];
-
-            // 열, 월 담는 컨테이너
-            let yearRow = $("<div>").addClass("year-row");
-            let yearDiv = $("<div>").addClass("year").text(year);
-            let eventsContainer = $("<div>").addClass("events");
-
-            $.each(events, function(index, eventData) {
-                let eventItem = $("<div>").addClass("event")
-                    .append($("<div>").addClass("month").text(eventData.month))
-                    .append($("<div>").addClass("description").text(eventData.event));
-
-                eventsContainer.append(eventItem);
-            });
-
-            yearRow.append(yearDiv).append(eventsContainer);
-            timelineContainer.append(yearRow);
-        });
-    });
-});
-
-// 브랜드 동영상 클릭 --------------------------------------------------------------------------------------
-$(document).ready(function() {
-    $("#video1").click(function() {
+          //  높은 열부터 시작
+          let sortedYears = Object.keys(timelineData).sort().reverse();
+  
+          $.each(sortedYears, function(index, year) {
+              let events = timelineData[year];
+  
+              // 열, 월 담는 컨테이너
+              let yearRow = $("<div>").addClass("year-row");
+              let yearDiv = $("<div>").addClass("year").text(year);
+              let eventsContainer = $("<div>").addClass("events");
+  
+              $.each(events, function(index, eventData) {
+                  let eventItem = $("<div>").addClass("event")
+                      .append($("<div>").addClass("month").text(eventData.month))
+                      .append($("<div>").addClass("description").text(eventData.event));
+  
+                  eventsContainer.append(eventItem);
+              });
+  
+              yearRow.append(yearDiv).append(eventsContainer);
+              timelineContainer.append(yearRow);
+          });
+      });
+  });
+  
+  // 브랜드 동영상 클릭 --------------------------------------------------------------------------------------
+  $(document).ready(function() {
+    // video1 
+    $("#videoImg1").click(function() {
         let videoURL = "https://www.youtube.com/embed/ysPg4-mSIJo"; 
         $("#videoFrame1").attr("src", videoURL).show();
-        $(this).hide(); // 클릭한 후 이미지 사라지가
+        $(this).hide(); 
+        $("#video_wrapper1").addClass("border");
     });
-    $("#video1").click(function() { 
-      $("iframe").addClass("border");
+    $("body").click(function(event) {
+    if (!$(event.target).closest("#videoImg1").length) {
+        $("#video_wrapper1").removeClass("border");
+      }
     });
-   
+    
+    // video 2--
+      $("#videoImg2").click(function() {
+          let videoURL = "https://www.youtube.com/embed/qFfjq1QTm08"; 
+          $("#videoFrame2").attr("src", videoURL).show();
+          $(this).hide(); // 클릭한 후 이미지 사라지기
+          $("#video_wrapper2").addClass("border");
+      });
+      $("body").click(function(event) {
+    if (!$(event.target).closest("#videoImg2").length) {
+        $("#video_wrapper2").removeClass("border");
+      }
+    });
 
-    $("#video2").click(function() {
-        let videoURL = "https://www.youtube.com/embed/qFfjq1QTm08"; 
-        $("#videoFrame2").attr("src", videoURL).show();
-        $(this).hide(); // 클릭한 후 이미지 사라지가
-    });
-    $("#video3").click(function() {
-        let videoURL = "https://www.youtube.com/embed/c85YxqEJwZE"; 
-        $("#videoFrame3").attr("src", videoURL).show();
-        $(this).hide(); // 클릭한 후 이미지 사라지가
+    // video 3-
+      $("#videoImg3").click(function() {
+          let videoURL = "https://www.youtube.com/embed/qFfjq1QTm08"; 
+          $("#videoFrame3").attr("src", videoURL).show();
+          $(this).hide(); // 클릭한 후 이미지 사라지기
+          $("#video_wrapper3").addClass("border");
+      });
+      $("body").click(function(event) {
+    if (!$(event.target).closest("#videoImg3").length) {
+        $("#video_wrapper3").removeClass("border");
+      }
     });
 
+
+
+  
+    
 });
-</script>
+
+    
+       
+
+
+
+
+  
+      // $("#videoImg2").click(function() {
+      //     let videoURL = "https://www.youtube.com/embed/qFfjq1QTm08"; 
+      //     $("#videoFrame2").attr("src", videoURL).show();
+      //     $(this).hide(); // 클릭한 후 이미지 사라지기
+      //     $("#videoFrame2").addClass("border");
+      // });
+     
+
+      // $("#videoImg3").click(function() {
+      //     let videoURL = "https://www.youtube.com/embed/c85YxqEJwZE"; 
+      //     $("#videoFrame3").attr("src", videoURL).show();
+      //     $(this).hide(); // 클릭한 후 이미지 사라지기
+      //     $("#videoFrame3").addClass("border");
+      // });
+
+     
+
+
+
+
+  </script>
+  
 
 
 
