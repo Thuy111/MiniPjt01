@@ -28,9 +28,9 @@ nav#main_nav {
   top: 0;
   z-index: 999;
   box-sizing: border-box;
-  color: white;
-  background-color: #313955;
-  border: 1px solid rgba(0, 0, 0, 0);
+  /* background-color: #313955; */
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 3px;
   transition: all 0.5s;
 }
@@ -59,7 +59,9 @@ nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site{
   border-radius: 30px;
   height: 40px;
   border: 1px solid rgba(34, 34, 34, 0.1);
-  background-color: rgba(34,34,34,0.2);
+  background-color: rgba(244, 244, 244, 0.8);
+  color: rgb(68, 68, 68);
+  border: 1px solid rgba(229, 229, 229, 0.8);
 }
 nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site:hover{text-decoration: none; color: white;}
 nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site>span{margin-right: 8px;}
@@ -68,7 +70,9 @@ nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a, nav#main_nav>ul>li h1{
   height: 100%;
   line-height: 48px;
   padding: 1rem;
+  color: black;
 }
+nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a{color: black;}
 nav#main_nav>ul>ul>li>a.active{border-bottom: 3px solid white;}
 nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a:hover{border-bottom: 3px solid #313955;}
 nav#main_nav .nav_dropdown {
