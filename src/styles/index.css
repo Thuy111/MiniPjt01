@@ -12,28 +12,102 @@
 }
 button{
   background-color: #f6f6f6;
+  width: 258px;
+  height: 56px;
+  font-size: 16px;
+  line-height: 56px;
+  color: #333;
+  border:none;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 50px !important;
+}
+button.short{
+  background-color: #f6f6f6;
   width: 158px;
   height: 56px;
   font-size: 16px;
   line-height: 56px;
   color: #333;
+  border:none;
   border-radius: 10px;
   text-align: center;
 }
-
+.divider{
+  width: 100%;
+  height: 32px;
+  background-color: #f6f6f6;
+}
 /* index--------------------------------------------------- */
 /* 01 */
 .index_container.lion_bg {
-  background: url("/src/assets/media/images/01index/00main3.png");
-  background-size: cover;
+  background-color: #FFEF6B;
+  background-image: url("/src/assets/media/images/01index/00main3.png");
+  background-size: 63%;
+  background-repeat: no-repeat; 
+  background-position: center -1%;
+  width: 100%;
   height: 720px;
+}
+
+/* 01 텍스트 배치 -------------------------------------------*/
+#index_mainhead {
+  position: relative;
+  font-size:40px;
+  font-weight: bold;
+  top:150px;
+}
+#index_subhead1{
+  position: absolute;
+  margin-top: 200px;
+}
+#index_subhead2{
+  position: absolute;
+  margin-top: 250px;
+}
+#index_button1{
+  float: left;
+  margin-top: 280px;
+  width: 178px;
+  height: 56px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 12px;
+  font-size: 16.2px;
+  font-weight: bold;
+  line-height: 56px;
+  color: #333;
+  background: #fff;
+  text-align: center;
+  margin-right: 10px;
+  margin-top: 350px;
+}
+#index_button2 {
+  float: left;
+  margin-top: 280px;
+  width: 178px;
+  height: 56px;
+  left:10px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 12px;
+  font-size: 16.2px;
+  font-weight: bold;
+  line-height: 56px;
+  color: #333;
+  background: #fff;
+  text-align: center;
+  margin-top: 350px;
+}
+
+#index_button1 img, #index_button2 img{
+  width: 24px;
+  height: 24px;
+  text-align: center;
 }
 /* 07.sky --------------------------------------------------*/
 /* 07. sky bg */
 .index_container.sky_bg {
-  background: url();
   background-size: cover;
-  height: 720px;
+  height: 930px;
   background-color: #333B58;
   color : white;
   display: flex;
@@ -41,16 +115,33 @@ button{
   align-items: center;
   flex-direction: column;
   text-align: center;
+}
+#sky_header{
+  position: relative;
+  z-index: 100;
+  text-align: center;
+  top: 10px;
+  margin-left:110px;
+}
+#sky_mainhead{
+  font-size:40px;
+  font-weight: bold;
+  margin-top: 170px;
+}
+#skymobile {
+  width: 329px;
+  height: 463px;
+  margin-top: 50px;
   
 }
 /* 07. sky stars */
 
 
-/* 08.체크카드드 */
+/* 08.체크카드---------------------------------------------------- */
 .index_container.checkcard_bg {
   background: url();
   background-size: cover;
-  height: 1062px;
+  height: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +149,21 @@ button{
   text-align: center;
   
 }
-/* 09.IT */
+.index_container #checkcard_mainhead{
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: -400px;
+}
+#checkcard_header{
+  position: relative;
+  z-index: 100;
+  text-align: center;
+  top: 10px;
+  margin-left:200px;
+  margin-top:500px;
+}
+
+/* 09.IT------------------------------------------------- */
 .index_container.it_bg {
   background: url();
   background-size: cover;
@@ -68,7 +173,47 @@ button{
   align-items: center;
   flex-direction: column;
   text-align: center;
+  background-color: #f9f9f9;
+  padding-bottom: 230px;
   
+}
+#it_mainhead{
+  font-size:40px !important;
+  font-weight: bold !important;
+}
+.index_container.it_bg.it_paragraphs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#it_paragraphs {
+  display: flex; 
+  gap: 20px; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+#it_paragraphs > div {
+  margin: 10px; 
+  padding: 20px; 
+}
+#short_paragraph2 {
+  margin-left: -200px !important;
+}
+
+#it_paragraphs h3 {
+  font-size: 1.3rem; 
+  font-weight: bold;
+}
+.content_bar{
+  font-size:40px;
+  font-weight:bold;
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: #000;
+  margin: 50px auto 140px;
 }
 /* 이미지 크기들------------------------------------------- */
 .index_container.confo_box img {
@@ -96,6 +241,9 @@ button{
   width: 408px;
   height: 715px;
 }
+.index_container.saving_box #bottomimg2{
+  margin-top: 30px;
+}
 .index_container.overseas_box{
   background-image: url(/src/assets/media/images/01index/05map.png);
   background-repeat: no-repeat;
@@ -105,4 +253,25 @@ button{
 .index_container.sky_bg img{
   width: 429px;
   height: 563px;
+}
+.index_container.it_bg img{
+  width: 1000px;
+  height: 250px;
+}
+/* 캐러셀----------------------------------------------------------------------------------- */
+/* 캐러셀 버튼*/
+.carousel-control-prev-icon {
+  background-image: url('/src/assets/media/images/01index/00card-arrow2.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  width: 30px; 
+  height: 30px; 
+  transform: rotate(180deg);
+}
+.carousel-control-next-icon {
+  background-image: url('/src/assets/media/images/01index/00card-arrow2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
 }
