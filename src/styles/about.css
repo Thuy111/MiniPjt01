@@ -1,27 +1,37 @@
 
+@font-face {
+  font-family: 'MyFont';
+  src: url('/src/assets/font/KoPubWorld_Dotum_Light.ttf') format('truetype'),
+  font-weight: normal;
+  font-style: normal;}
 
+  body{
+    font-family: 'MyFont';
+  }
 
 .kakao{
   margin-top: 150px;
   margin-bottom: 80px;
 }
 .kakao h1{
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 200;
   margin-bottom: 30px;
 }
 .kakao p{
-  font-size: 15px;
-  line-height: 25px;
+  font-size: 18px;
+  line-height: 35px;
+  font-weight: 200;
+  
 }
 
 /* 홈 이미지 -----------------------------------------------------------*/
 .phoneImg{
-background-image: url(../assets/media/images/02about/home_image.png);
+background-image: url(/src/assets/media/images/02about/home_image.png);
 background-size: cover;
 background-position: right 48% top 45%;
 height: 500px;
-margin-bottom: 100px;
+margin-bottom: 80px;
 }
 
 /* 은행 history--------------------------------------------------------- */
@@ -29,10 +39,13 @@ margin-bottom: 100px;
   display: flex;
   justify-content: center; 
   align-items: center;
+
 }
 #timeline {
   max-width: 800px;
   margin: 20px auto;
+  font-family: 'MyFont';
+  line-height: 40px;
 }
 
 .year-row {
@@ -65,10 +78,12 @@ margin-bottom: 100px;
   color: #888888;
   text-align: right;
   margin-right: 30px;
+  font-size: 18px;
 }
 
 .description {
   flex-grow: 1;
+  font-size: 18px;
 }
 
 
@@ -80,6 +95,7 @@ margin-bottom: 100px;
   padding-bottom: 300px !important;
   margin-top: 100px;
   margin-bottom: 100px;
+  font-family: 'MyFont';
 }
 .video h2, .bi_intro h2{
   margin-bottom: 20px;
@@ -133,15 +149,18 @@ margin-bottom: 100px;
 }
 
 /* thêm */
-.border{
-  border: 10px dashed black;
+.border {
+  border: 3px dashed black !important;
 }
   
 
   
 /* BI 소개 --------------------------------------------------------------------- */
+.bi_intro{
+  font-family: 'MyFont';
+}
 .biImg{
-  background-image: url(../assets/media/images/02about/img_brand_bi.png);
+  background-image: url(/src/assets/media/images/02about/img_brand_bi.png);
   background-size: cover;
   height: 500px;
   margin-bottom: 60px;
