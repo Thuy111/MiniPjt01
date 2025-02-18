@@ -62,15 +62,18 @@ a.nav-link {
   border-left: 1px solid #e6e6e6;
 }
 
-/* 질문과 답변************************************** */
+/* 질문과 답변*************************************** */
 .tab-content {
   width: 1080px;
 }
-.tab-pane>a { /* 더보기 버튼 */
+[id^="load_more"] { /* 더보기 버튼 */
   border-bottom: 1px solid #d0d0d0;
   padding: 20px 10px;
   text-align: center;
   display: block;
+}
+[id^="load_more"]:hover { /* 더보기 버튼 */
+  cursor: pointer;
 }
 [id^="faq_container"] { /* 카테고리별 faq 목록 */
   border-top: 1px solid #e6e6e6;
@@ -85,4 +88,28 @@ a.nav-link {
 .faq_content .collapse { /* 답변 */
   border-top: 1px solid #e2e2e2;
   background: #f4f4f4;
+}
+
+/* 답변 효과용*************************************** */
+.indent {
+  margin-left: 15px;
+}
+.bold {
+  font-weight: bold;
+}
+.highlight {
+  background-color: yellow;
+}
+.red {
+  color: red;
+}
+.blue_line {
+  color: blue;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.navy_line {
+  color: #085294;
+  text-decoration: underline;
+  text-decoration-color: black;
 }
