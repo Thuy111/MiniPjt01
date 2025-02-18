@@ -65,4 +65,53 @@ $(document).ready(function(){
     searchIndexCard();
   });
 
+  // animate가 스크롤이 되었을 때 실행하기
+  $(window).on('scroll', function() {
+    var scrollpos = $(window).scrollTop(); // 현재 스크롤 위치
+    var content01 = $('#savingimg3').offset().top; // #content1 요소의 화면에서의 위치
+    var content02 = $('#overseasimg').offset().top;
+    var content03 = $('.moonoriginal').offset().top;
+    var content04 = $('.sky_bg').offset().top;
+
+    console.log(scrollpos);
+    // 스크롤 값이 400을 넘고, #content1이 화면에 나타나면 애니메이션을 추가
+    if (scrollpos + $(window).height() > content01 + 100) {
+      $('#savingimg3').addClass('animate__animated animate__slideInRight').css('opacity', '1');
+    }
+    if (scrollpos + $(window).height() > content02 + 100) {
+      $('#overseasimg').addClass('animate__animated animate__slideInUp').css('opacity', '1');
+    }
+    if (scrollpos + $(window).height() > content03 + 100) {
+      $('.moonoriginal').addClass('animate-moon').css('opacity', '1');
+    }
+    if (scrollpos + $(window).height() > content04 + 100) {
+      $('.sky_bg').css('background-color', '#333b58'); // 밤 배경색
+    } else {
+      $('.sky_bg').css('background-color', '#87CEEB'); // 낮 배경색
+    }
+   
+  });
 });
+
+// 별 깜빡깜빡
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY; // 현재 스크롤 위치
+  const h2Element = document.querySelector('#sky_mainhead');
+  const h2Position = h2Element.offsetTop; // h2의 Y축 위치
+  const windowHeight = window.innerHeight; // 뷰포트 높이
+  const circle = document.querySelector('.circle');
+  const container = document.querySelector('.container');
+  const stars = document.querySelectorAll('.star');
+
+  // h2 태그를 지날 때 색상 변경 및 별 표시
+  if (scrollPosition + windowHeight > h2Position) {
+    container.style.background = '#000000'; // 배경 색상: 검은색
+    circle.style.backgroundColor = '#FFFFFF'; // 원 색상: 하얀색
+    stars.forEach(star => star.style.display = 'block'); // 별 표시
+  } else {
+    container.style.background = '#87CEEB'; // 배경 색상: 파랑
+    circle.style.backgroundColor = '#FFD700'; // 원 색상: 노랑
+    stars.forEach(star => star.style.display = 'none'); // 별 숨기기
+  }
+});
+ 

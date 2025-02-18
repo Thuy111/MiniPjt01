@@ -130,7 +130,7 @@ button.short{
 .index_container.sky_bg {
   background-size: cover;
   height: 930px;
-  background-color: #333B58;
+  background-color: #559CDE;
   color : white;
   display: flex;
   justify-content: center;
@@ -156,9 +156,50 @@ button.short{
   margin-top: 50px;
   
 }
-/* 07. sky stars */
-
-
+/* 07. sky sun+moon */
+.moonoriginal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(450px, -690px); /* 새로운 위치 설정 */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #FFD700; /* 초기 색상: 노랑 */
+  transition: background-color 2s ease;
+  z-index: 9999; /* 원을 최상위로 배치 */
+  }
+  .animate-moon {
+    transition: background-color 2s ease, transform 2s ease;
+    background-color: #FFFFFF; 
+  }
+  .sky_bg {
+    transition: background-color 2s ease;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  
+  /* 별 스타일 */
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    width: 3px;
+    height: 3px;
+    opacity: 0.2; /* 초기 상태 */
+    animation: twinkle 2s infinite ease-in-out; /* 반짝이는 애니메이션 */
+    z-index: 9998;
+  }
+  
 /* 08.체크카드---------------------------------------------------- */
 #checkcard_mainhead{
   font-size: 40px;
