@@ -65,7 +65,9 @@
   float: none;
 }
 .img_set{
-  width: 400px;
+  width: 50%;
+  min-width: 300px;
+  max-width: 500px;
 }
 .floating_icon{
   float: left;
@@ -81,6 +83,9 @@
 }
 
 /* 요소 간격 설정 */
+#sub_content{
+  padding: 0 10%;
+}
 #ad_contents{
   font-size: 16px;
 }
@@ -195,6 +200,7 @@
   padding: 15px 0px;
   font-weight: bold;
   color: #333333;
+  cursor: pointer;
 }
 /* 상품안내 등 5개 모달을 띄우는 칸 */
 #more_info :nth-child(n+1):nth-child(-n+5){
@@ -219,7 +225,67 @@
   cursor: pointer;
 }
 /* 모달 설정 */
-
+.modal.show{
+  background-color: rgba(0,0,0,0.2);
+}
+.modal_posistion{
+  max-width: 800px;
+  width: 50%;
+}
+.modal_bg_set{
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 10px 15px;
+  border: none;
+}
+.modal_inner{
+  margin: 50px 40px;
+  padding-right: 20px;
+}
+.modal_inner p{
+  color: #222222;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.modal_inner div{
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.modal_inner div>div{
+  color: #888;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.modal_inner span{
+  color: #17699C;
+  font-weight: bold;
+}
+/* 모달 앵커태그 설정 */
+#product_terms a{
+  text-decoration: underline;
+}
+.modal_inner{position: relative;}
+#product_terms p{
+  display: inline-block;
+}
+.download_a{
+  color: #666666;
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+}
+.download_a:hover{
+  color: #666666;
+}
+#terms_list li{
+  list-style-type: disc;
+  color: #222222;
+}
+#terms_list li::marker{
+  font-size: 10px;
+}
 
 
 /* 상품 광고 칸 */
