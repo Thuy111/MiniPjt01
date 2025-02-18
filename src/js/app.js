@@ -236,7 +236,7 @@ $(document).ready(function(){
     
 
   // dropdown menu-----------------------------------------------
-  $('nav#main_nav>ul>ul>li>a').on('mouseenter', function(event){
+  $('nav#main_nav>ul>ul>li>a').on('mousemove', function(event){
     getMenuData(event);
   });
   function getMenuData(e){
@@ -274,12 +274,12 @@ $(document).ready(function(){
   };
 
   // navigation css animation(mouse&scroll) -----------------------------------
-  $('nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a').on('mouseenter', function(){activeNav();});
+  $('nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a').on('mousemove', function(){activeNav();});
   $('nav#main_nav').on('mouseleave', function(){
     inactiveNav();
     $('.nav_dropdown').css({'display': 'none'});
   });
-  $('nav#main_nav>ul>ul>li:nth-last-child(-n+2)').on('mouseenter', function(){
+  $('nav#main_nav>ul>ul>li:nth-last-child(-n+2)').on('mousemove', function(){
     inactiveNav();
     $('.nav_dropdown').css({'display': 'none'});
   });
