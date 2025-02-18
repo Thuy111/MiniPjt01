@@ -48,18 +48,35 @@
 
 /* 카테고리****************************************** */
 #tab_list {
-  /* border: 1px solid #e6e6e6; */
   width: 100%;
   margin-bottom: 50px;
   font-size: 15px;
 }
+#tab_list li:first-of-type a.nav-link {
+  border-left: 1px solid #e6e6e6;
+}
 a.nav-link {
   border: 1px solid #e6e6e6;
   border-left: none;
-  padding: 15px 19px;
+  color: #909090;
+  font-weight: bold;
+  font-size: smaller;
+  text-align: center;
+  line-height: 34px;
+  width: 78px;
+  height: 68px;
+  padding: 15px 5px;
 }
-#tab_list li:first-of-type a.nav-link {
-  border-left: 1px solid #e6e6e6;
+#custom_width {
+  width: 126px;
+}
+a.nav-link:hover {
+  border: 1px solid black !important;
+  text-decoration: underline;
+}
+a.nav-link.active {
+  border: 1px solid black !important;
+  color: black;
 }
 
 /* 질문과 답변*************************************** */
@@ -82,8 +99,14 @@ a.nav-link {
 .faq_content { /* 질문-답변 1묶음 */
   border-bottom: 1px solid #e6e6e6;
 }
-.faq_content div { /* 질문 */
+.faq_content:hover {
+  background: #f4f4f4;
+}
+.faq_content div { /* 질문+답변 */
   padding: 20px 10px;
+}
+.faq_content a {
+  text-decoration: none;
 }
 .faq_content .collapse { /* 답변 */
   border-top: 1px solid #e2e2e2;
