@@ -183,6 +183,7 @@ $(document).ready(function(){
   };
   let dropData = [];
 
+
   // Header-Navigation -------------------------------------------
   // navigation focus menu
   let location = window.location.href;
@@ -194,6 +195,18 @@ $(document).ready(function(){
   
   if(location == 'index'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
+    $('nav#main_nav').css({
+      'background-color': '#fff',
+      'color': 'black'
+    });
+    $('nav#main_nav').css('border-bottom', '1px solid rgba(0, 0, 0, 0.1)');
+    $('nav#main_nav>ul>li h1').css('color', 'black');
+    $('nav#main_nav>ul>ul>li>a').css('color', 'black');
+    $('nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site').css({
+      'background-color': 'rgba(244, 244, 244, 0.8)',
+      'color': 'rgb(68, 68, 68)',
+      'border': '1px solid rgba(229, 229, 229, 0.8)'
+    });
   }else if(location == 'about'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
     $('nav#main_nav>ul>ul>li:nth-child(1)>a').addClass('active');
@@ -206,9 +219,23 @@ $(document).ready(function(){
   }else if(location == 'FAQ'){
     $('nav#main_nav>ul>ul>li>a').removeClass('active');
     $('nav#main_nav>ul>ul>li:nth-child(4)>a').addClass('active');
+    $('nav#main_nav a.active').css('border-bottom', '3px solid black');
+    $('nav#main_nav').css({
+      'background-color': '#ffe100',
+      'color': 'black'
+    });
+    $('nav#main_nav').css('border-bottom', '1px solid rgba(0, 0, 0, 0.1)');
+    $('nav#main_nav>ul>li h1').css('color', 'black');
+    $('nav#main_nav>ul>ul>li>a').css('color', 'black');
+    $('nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site').css({
+      'background-color': 'rgba(244, 244, 244, 0.8)',
+      'color': 'rgb(68, 68, 68)',
+      'border': '1px solid rgba(229, 229, 229, 0.8)'
+    });
   }
     
-  // dropdown menu
+
+  // dropdown menu-----------------------------------------------
   $('nav#main_nav>ul>ul>li>a').on('mouseenter', function(event){
     getMenuData(event);
   });
@@ -246,7 +273,7 @@ $(document).ready(function(){
     }
   };
 
-  // navigation css animation
+  // navigation css animation(mouse&scroll) -----------------------------------
   $('nav#main_nav>ul>ul>li:not(:nth-last-child(-n+2))>a').on('mouseenter', function(){activeNav();});
   $('nav#main_nav').on('mouseleave', function(){
     inactiveNav();
@@ -266,8 +293,10 @@ $(document).ready(function(){
     }
   });
 
-  // navigation 활성화
+  // navigation 활성화 함수
   function activeNav(){
+    $('nav#main_nav>ul>li h1').css('color', 'black');
+    $('nav#main_nav>ul>ul>li>a').css('color', 'black');
     $('nav#main_nav a.active').css('border-bottom', '3px solid #313955');
     $('nav#main_nav').css({
       'background-color': 'white',
@@ -278,28 +307,31 @@ $(document).ready(function(){
       'color': 'rgb(68, 68, 68)',
       'border': '1px solid rgba(229, 229, 229, 0.8)'
     });
-    $('nav#main_nav>ul>li h1').css('color', 'black');
-    $('nav#main_nav>ul>ul>li>a').css('color', 'black');
   }
-  // navigation 비활성화
+  // navigation 비활성화 (menu에 따라 다르므로 조건을 다르게)
   function inactiveNav(){
-    if(scrollY > 40){      
+    if(scrollY > 40){
       return;
     }else{
-      console.log('inactive');
-      
-      $('nav#main_nav a.active').css('border-bottom', '3px solid white');
-      $('nav#main_nav').css({
-        'background-color': '#313955',
-        'border-bottom': '1px solid rgba(0, 0, 0, 0)'
-      });
-      $('nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site').css({
-        'background-color': 'rgba(34,34,34,0.2)',
-        'color': 'white',
-        'border': '1px solid rgba(34, 34, 34, 0.1)'
-      });
-      $('nav#main_nav>ul>li h1').css('color', 'white');
-      $('nav#main_nav>ul>ul>li>a').css('color', 'white');
+      if(location == 'index'){
+        $('nav#main_nav').css({
+          'background-color': '#fff',
+          'color': 'black'
+        });
+      }else if(location == 'FAQ'){
+        $('nav#main_nav').css('background-color', '#ffe100');
+        $('nav#main_nav').css('border-bottom', '1px solid rgba(0, 0, 0, 0.1)');
+      }else{
+        $('nav#main_nav a.active').css('border-bottom', '3px solid white');
+        $('nav#main_nav').css('background-color', '#313955');
+        $('nav#main_nav>ul>li h1').css('color', 'white');
+        $('nav#main_nav>ul>ul>li>a').css('color', 'white');
+        $('nav#main_nav>ul>ul>li:nth-last-child(2)>#rel_site').css({
+          'background-color': 'rgba(34,34,34,0.2)',
+          'color': 'white',
+          'border': '1px solid rgba(34, 34, 34, 0.1)'
+        });
+      }
     }
   };
 
