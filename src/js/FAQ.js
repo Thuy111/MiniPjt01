@@ -60,7 +60,7 @@ $(document).ready(function () {
 
     // 더보기 버튼 표시/숨김 처리
     if (visibleItems[tabNumber] >= totalItems[tabNumber]) $(loadMoreBtn).hide();
-    else $(loadMoreBtn).show().html(`더보기 (${visibleItems[tabNumber]} / ${totalItems[tabNumber]}) <i class="fa-solid fa-chevron-down"></i>`);
+    else $(loadMoreBtn).show().html(`더보기(${visibleItems[tabNumber]} / ${totalItems[tabNumber]}) <i class="fa-solid fa-chevron-down"></i>`);
   }
 
   // 더보기 버튼 클릭 이벤트
@@ -146,8 +146,9 @@ $(document).ready(function () {
     // console.log("📢 검색 결과 화면에 표시");
 
     // 검색 결과 더보기 버튼 표시/숨김 처리
+    console.log("더보기 버튼 숨김 체크:", visibleResults, totalResults);
     if (visibleResults >= totalResults) $('#load_more_search').remove();
-    else $('#load_more_search').show().html(`더보기 (${visibleResults} / ${totalResults}) <i class="fa-solid fa-chevron-down"></i>`);
+    else $('#load_more_search').show().html(`더보기(${visibleResults} / ${totalResults}) <i class="fa-solid fa-chevron-down"></i>`);
   }
 
   // 검색 결과 더보기 버튼
