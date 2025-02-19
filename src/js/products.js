@@ -34,7 +34,6 @@ $(document).ready(function(){
   var slider2 = $('.slider2');
   // Pause the sliders on mouse enter and resume on mouse leave
   $('.slider_bg_set').on('mouseenter', function() {
-    // console.log("mouseenter");
     slider.slick('slickSetOption', 'autoplay', false, true);
     slider.slick('slickPause');
     slider2.slick('slickPause');
@@ -42,7 +41,6 @@ $(document).ready(function(){
   });
   
   $('.slider_bg_set').on('mouseleave', function() {
-    // console.log("mouseleave");
     $(".slider").slick('slickPlay');
     $(".slider2").slick('slickPlay');
   });
@@ -57,7 +55,6 @@ $(document).ready(function(){
     var content04 = $('#content4').offset().top;
     var content05 = $('#content5').offset().top;
 
-    console.log(scrollpos);
     // 스크롤 값이 400을 넘고, #content1이 화면에 나타나면 애니메이션을 추가
     if (scrollpos + $(window).height() > content01 + 100) {
       $('#content1').addClass('animate__animated animate__fadeInUp').css('opacity', '1');
@@ -87,7 +84,6 @@ $(document).ready(function(){
       // var modal_height = modal_dialog.outerHeight(); // 모달의 높이
       // var margin_top = (window_height - modal_height) / 2;
   
-      // // console.log("모달너비/창너비/줄마진값"+modal_width+'/'+window_width+'/'+margin_left);
       // // 수평/수직 중앙에 배치
       // modal_dialog.css({'margin-left': margin_left + 'px'});
       // modal_dialog.css('margin-top', margin_top + 'px');
