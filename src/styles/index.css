@@ -22,6 +22,9 @@ button{
   text-align: center;
   margin-bottom: 50px !important;
 }
+#index_button1, #index_button2{
+  cursor: pointer;
+}
 button.short{
   background-color: #f6f6f6;
   width: 158px;
@@ -77,15 +80,15 @@ button.short{
   position: relative;
   font-size:40px;
   font-weight: bold;
-  top:150px;
+  top:130px;
 }
 #index_subhead1{
   position: absolute;
-  margin-top: 200px;
+  margin-top: 150px;
 }
 #index_subhead2{
   position: absolute;
-  margin-top: 250px;
+  margin-top: 200px;
 }
 #index_button1{
   float: left;
@@ -101,7 +104,7 @@ button.short{
   background: #fff;
   text-align: center;
   margin-right: 10px;
-  margin-top: 350px;
+  margin-top: 260px;
 }
 #index_button2 {
   float: left;
@@ -117,7 +120,7 @@ button.short{
   color: #333;
   background: #fff;
   text-align: center;
-  margin-top: 350px;
+  margin-top: 260px;
 }
 
 #index_button1 img, #index_button2 img{
@@ -143,35 +146,57 @@ button.short{
   z-index: 100;
   text-align: center;
   top: 10px;
-  margin-left:110px;
+  margin-left:150px;
 }
 #sky_mainhead{
   font-size:40px;
   font-weight: bold;
-  margin-top: 170px;
+  margin-top: 350px;
 }
 #skymobile {
   width: 329px;
-  height: 463px;
-  margin-top: 50px;
-  
+  height: 465px;
+  margin-top: 70px;
+  margin-right: 20px;
 }
 /* 07. sky sun+moon */
 .moonoriginal {
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(450px, -690px); /* 새로운 위치 설정 */
+  transform: translate(450px, -690px);
   width: 100px;
   height: 100px;
   border-radius: 50%;
   background-color: #FFD700; /* 초기 색상: 노랑 */
-  transition: background-color 2s ease;
+  transition: background-color 1s ease;
   z-index: 9999; /* 원을 최상위로 배치 */
   }
+.moonshadow{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(420px, -810px) scale(0);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color:  #FFD700;
+  transition: background-color 1s ease;
+  z-index: 9999; /* 원을 최상위로 배치 */
+  opacity: 0;
+  transition: 
+  opacity 1.5s ease-out 1.5s, 
+  transform 1.5s ease-out; /* transform 애니메이션 (scale) */
+}
+/* transition: 애니메이션 지속시간 ease(애니메이션속도) 애니메이션 대기시간간 */
   .animate-moon {
-    transition: background-color 2s ease, transform 2s ease;
+    transition: background-color 1s ease, transform 1s ease;
     background-color: #FFFFFF; 
+  }
+  .animate-shadow {
+    transform: translate(420px, -810px) translateX(0);
+    opacity: 1;
+    background-color: #333b58;
   }
   .sky_bg {
     transition: background-color 2s ease;
@@ -195,7 +220,7 @@ button.short{
     background-color: #FFFFFF;
     width: 3px;
     height: 3px;
-    opacity: 0.2; /* 초기 상태 */
+    opacity: 0.2;
     animation: twinkle 2s infinite ease-in-out; /* 반짝이는 애니메이션 */
     z-index: 9998;
   }
@@ -205,7 +230,7 @@ button.short{
   font-size: 40px;
   font-weight: bold;
 }
-.card_box {position: relative;text-align: center;margin: 2rem auto;} 
+.card_box {position: relative;text-align: center;margin: 5rem auto;} 
 .index_container.checkcard_bg {
   background: url();
   background-size: cover;
@@ -250,6 +275,7 @@ button.short{
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
+  cursor: pointer;
 }
 .slick-arrow i {
   font-size: 40px;
@@ -268,34 +294,24 @@ button.short{
   cursor: pointer;
 }
 .controll-card i:hover{color: black;}
-
-
-
-
-
-
-
-
-
-
-
 /* 09.IT------------------------------------------------- */
 .index_container.it_bg {
   background: url();
   background-size: cover;
-  height: 1176px;
+  height: 1100px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
   background-color: #f9f9f9;
-  padding-bottom: 230px;
+  padding-bottom: 200px;
   
 }
 #it_mainhead{
   font-size:40px !important;
   font-weight: bold !important;
+  margin-top: 200px;
 }
 .index_container.it_bg.it_paragraphs{
   display: flex;
@@ -344,6 +360,8 @@ button.short{
 .index_container.saving_box img {
   width: 409px;
   height: 722px;
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 .index_container.moim_box img {
   width: 459px;
@@ -356,6 +374,8 @@ button.short{
 .index_container.overseas_box img {
   width: 408px;
   height: 715px;
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 .index_container.saving_box #bottomimg2{
   margin-top: 30px;

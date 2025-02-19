@@ -84,6 +84,9 @@ $(document).ready(function(){
     if (scrollpos + $(window).height() > content03 + 100) {
       $('.moonoriginal').addClass('animate-moon').css('opacity', '1');
     }
+    if (scrollpos + $(window).height() > content03 + 100) {
+      $('.moonshadow').addClass('animate-shadow').css('opacity', '1');
+    }
     if (scrollpos + $(window).height() > content04 + 100) {
       $('.sky_bg').css('background-color', '#333b58'); // 밤 배경색
     } else {
