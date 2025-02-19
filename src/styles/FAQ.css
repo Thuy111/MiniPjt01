@@ -12,6 +12,9 @@
   margin-bottom: 30px;
   font-size: 30px;
 }
+#search_contents {
+  perspective: 1000px;
+}
 #question_box {
   background: #fafafa;
   width: 600px;
@@ -19,6 +22,8 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
+  animation: swing 0.5s ease;
+  transform-origin: top center;
 }
 #question_box i {
   width: 25px;
@@ -37,6 +42,15 @@
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+@keyframes swing {
+  0% { transform: rotateX(0deg); }
+  20% { transform: rotateX(30deg); }
+  40% { transform: rotateX(0deg); }
+  60% { transform: rotateX(-15deg); }
+  80% { transform: rotateX(9deg); }
+  100% { transform: rotateX(0deg); }
 }
 
 /* 자주묻는 질문******************************************************************************* */
