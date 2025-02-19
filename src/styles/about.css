@@ -153,7 +153,7 @@ margin-bottom: 80px;
   display: none;
 }
 
-/* thêm */
+/* 동영상의 border */
 .border {
   border: 3px dashed black !important;
 }
@@ -169,7 +169,7 @@ margin-bottom: 80px;
   background-size: cover;
   height: 500px;
   margin-bottom: 60px;
-  
+  background-position: center; 
 }
 .text_sym{
    padding-bottom: 90px;
