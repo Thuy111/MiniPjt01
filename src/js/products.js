@@ -1,53 +1,26 @@
 $(document).ready(function(){
-
-  // 첫 번째 슬라이더 설정
-  $("#moving_panel").slick({
-    autoplay: true,
-    autoplaySpeed: 0,
-    speed: 4500,
-    cssEase: "linear",
-    slidesToShow: 5,
-    slidesToScroll: 2,
-    pauseOnFocus: true,
-    pauseOnHover: true,
-    centerMode: false,
-    touchMove: false,
-    variableWidth: true,
-    infinite: true,
-  });
-
-  // 두 번째 슬라이더 설정
-  $("#moving_panel2").slick({
-    autoplay: true,
-    autoplaySpeed: 0,
-    speed: 4000,
-    cssEase: "linear",
-    slidesToShow: 10,
-    slidesToScroll: 2,
-    pauseOnFocus: true,
-    pauseOnHover: true,
-    centerMode: false,
-    touchMove: false,
-    infinite: true,
-  });
-
-  // 슬라이더 요소를 변수에 저장
-  var slider = $('.slider');
-  var slider2 = $('.slider2');
-
-  // 슬라이더를 일시 중지 및 재개하는 함수
-  function pauseSliders() {
-    slider.slick('slickPause');
-    slider2.slick('slickPause');
-  }
-
-  function playSliders() {
-    slider.slick('slickPlay');
-    slider2.slick('slickPlay');
-  }
-
-  // 슬라이더 이벤트 핸들러 설정
-  $('.slider_bg_set').on('mouseenter', pauseSliders).on('mouseleave', playSliders);
+  
+  // 재사용 함수 및 상수 정의 & API 호출 함수 정의
+    $('.main_slider').hover(function() {
+      console.log('hover');
+      
+      // 현재 위치를
+      const computedStyle = window.getComputedStyle($('#moving_panel')[0]);
+      const scaleValue = computedStyle.transform === 'none' ? 1 : parseFloat((computedStyle.transform.split(',')[4]));
+      
+      $('#moving_panel, #moving_panel2').css({
+        'animation-play-state': 'paused'
+      });
+  
+    }, function() {
+      console.log('out');
+      
+      // 다시 animation 속성을 시작
+      $('#moving_panel, #moving_panel2').css({
+        'animation-play-state': 'running'
+      });
+  
+    });
 
   // 스크롤 이벤트 핸들러 설정
   $(window).on('scroll', function() {

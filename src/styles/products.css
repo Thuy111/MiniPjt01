@@ -1,12 +1,8 @@
-/* css배치 점검용 보더 */
-.test div, .test p{ 
-  border: 1px solid #bbb;
-}
-
 /* 기본적인 배치를 위한 css */
 .product_container{
   text-align: center;
   margin: 0px 20%;
+  overflow: hidden;
 }
 .container_top_margin{
   margin-top: 200px;
@@ -15,17 +11,24 @@
   background-color: #F7F7F7;
 }
 .slider_bg_set{
-  padding-bottom: 15px;
-  padding-top: 40px;
+  margin-top: 145px;
+  padding: 50px 0px;
+
   background-color: #23A662;
 }
 
-/* slick / 캐러셀 / 글씨 애니메이션 설정 */
-#moving_panel,#moving_panel2{
-  width: 100%;
-  min-height: 100px;
-  background-color: #23A662;
-}
+/* 캐러셀 스타일 */
+.main_slider {background-color: #23A662;overflow:hidden;}
+/* animation */
+.slider_body {overflow: hidden;height: 265px; background-color: #23A662;}
+.slider_section {display: flex; width: 200%;}
+/* .animation_panel */
+.slider {display: flex; white-space: nowrap; width: 100vw;align-items: center;}
+.animation_box1 {animation: moveToRight 35s linear infinite;}
+.animation_box2 {animation: moveToRight 20s linear infinite;}
+.moving_margin{padding: 5px;}
+@keyframes moveToRight {from {transform: translateX(0);}to {transform: translateX(-100%);}}
+
 #moving_panel div:nth-child(odd){
   font-size: 48px;
   font-weight: bold;
@@ -36,28 +39,14 @@
   font-size: 36px;
   font-weight: bold;
   background-color: #fff;
-  border-radius: 40px;
+  border-radius: 30px;
   padding:5px 15px;
-  margin: 0px 10px;
+  margin: 0px 5px;
   margin-top: 5px;
   text-align: center;
   color: #23A662;
 }
-#moving_panel2 .slick-slide:nth-child(2n-1){
-  /* border: 2px solid blue; */
-  width: 65px !important;
-}
-#moving_panel2 .slick-slide:nth-child(8n), #moving_panel2 .slick-slide:nth-child(8n+4){
-  /* border: 2px solid red; */
-  width: 150px !important;
-}
-/* #moving_panel2 .slick-slide:nth-child(8n+2){
-  border: 2px solid pink;
-} */
-#moving_panel2 .slick-slide:nth-child(8n+6){
-  /* border: 2px solid yellow; */
-  width: 250px !important;
-}
+
 #moving_panel2 div:nth-child(odd) img{
   width: 62px;
   padding-top: 5px;
@@ -292,6 +281,9 @@
 .modal_inner span{
   color: #17699C;
   font-weight: bold;
+}
+.scale_up{
+  transform: scale(1.2);
 }
 /* 모달 앵커태그 설정 */
 #product_terms a{
