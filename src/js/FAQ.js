@@ -104,8 +104,6 @@ $(document).ready(function () {
       searchResults = searchResults.concat(filtered);
     }
 
-    console.log("검색 결과 개수:", searchResults.length);
-
     if (searchResults.length === 0) {
       $('#search_results').html('<p>검색 결과가 없습니다.</p>');
       return;
@@ -148,8 +146,6 @@ $(document).ready(function () {
     // console.log("📢 검색 결과 화면에 표시");
 
     // 검색 결과 더보기 버튼 표시/숨김 처리
-    console.log($('#load_more_search').length);
-    console.log("더보기 버튼 숨김 체크:", visibleResults, totalResults);
     if (visibleResults >= totalResults) $('#load_more_search').remove();
     else $('#load_more_search').show().html(`더보기 (${visibleResults} / ${totalResults}) <i class="fa-solid fa-chevron-down"></i>`);
   }
