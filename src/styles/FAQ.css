@@ -105,6 +105,13 @@ a.nav-link.active {
   font-family: '돋움', dotum, sans-serif;
   font-weight: bolder;
 }
+#search_container { /* 카테고리별 faq 목록 */
+  border-top: 1px solid #e6e6e6;
+  margin-top: 20px;
+  font-size: 12px;
+  font-family: '돋움', dotum, sans-serif;
+  font-weight: bolder;
+}
 .faq_content { /* 질문-답변 1묶음 */
   border-bottom: 1px solid #e6e6e6;
 }
@@ -116,6 +123,7 @@ a.nav-link.active {
 }
 .faq_content a {
   text-decoration: none;
+  cursor: pointer;
 }
 .collapse, .search_collapse { /* 답변 */
   border-top: 1px solid #e2e2e2;
