@@ -1,11 +1,12 @@
 $(document).ready(function () {
-  // 아코디언 컨텐츠 내용########################################################################
   let dataCache = {};  // 카테고리별 데이터 캐시
   let visibleItems = {};  // 각 카테고리별 표시할 개수
   let totalItems = {};  // 각 카테고리별 전체 개수
   let searchQuery = '';  // 검색어 저장
   let searchResults = [];  // 검색 결과 저장
-
+  
+  // 아코디언 컨텐츠 내용########################################################################
+  
   // JSON 데이터 로드
   function loadCategoryData(tabNumber) {
     let categoryFile = `../data/faq_category${tabNumber < 10 ? '0' : ''}${tabNumber}.json`;
@@ -31,8 +32,8 @@ $(document).ready(function () {
 
       if (!item.subcategory) {
         faqHtml += `
-          <div class="faq_content">
-            <div id="content${tabNumber}-${i}">
+          <div class="faq_content" data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
+            <div id="content${tabNumber}-${i}" onclick="showCategory(event)">
               <a data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
               ${item.title}
               </a>
@@ -43,8 +44,8 @@ $(document).ready(function () {
           </div>`;
       } else {
         faqHtml += `
-          <div class="faq_content">
-            <div id="content${tabNumber}-${i}">
+          <div class="faq_content" data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
+            <div id="content${tabNumber}-${i}" onclick="showCategory(event)">
               <a data-toggle="collapse" data-target="#collapse${tabNumber}-${i}" aria-expanded="false" aria-controls="collapse${tabNumber}-${i}">
               [${item.subcategory}] ${item.title}
               </a>
@@ -131,7 +132,7 @@ $(document).ready(function () {
 
       resultHtml += `
         <div class="faq_content">
-          <div id="search_content${i}">
+          <div id="search_content${i}" onclick="showCategory(event)">
             <a data-toggle="collapse" data-target="#search_collapse${i}" aria-expanded="false" aria-controls="search_collapse${i}">
               ${subcategoryText}${item.title}
             </a>
@@ -182,3 +183,20 @@ $(document).ready(function () {
     loadCategoryData(i);
   }
 });
+
+function showCategory(e) {
+  const titleShow = $(e.target.parentNode.childNodes[1]);
+  const hasClasses = e.target.parentNode.childNodes[3].classList;
+  const allChild = $('.faq_content>div:nth-child(1)'); // 모든 제목
+
+  // 반응이 한박자 느리므로 거꾸로 처리
+  // css를 직접 참조하기보다 클래스를 넣는게 더 안정적
+  if(hasClasses.contains('show')) {
+    // console.log('show');
+    titleShow.removeClass('collapse_bg');
+  }else{
+    // console.log('hide');
+    allChild.removeClass('collapse_bg');
+    titleShow.addClass('collapse_bg');
+  }
+}
