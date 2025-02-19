@@ -1,5 +1,55 @@
 $(document).ready(function(){
 
+  //캐러셀
+  $("#moving_panel").slick( { // 첫번쩨 슬라이더 설정
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed:4500,
+    cssEase:"linear",
+    slidesToShow: 5,
+    slidesToScroll: 2,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    centerMode: false,
+    touchMove: false,
+    variableWidth: true,
+    infinite: true,
+  } );
+  $("#moving_panel2").slick( { // 두번째 슬라이더 설정
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed:4000,
+    cssEase:"linear",
+    slidesToShow: 10,
+    slidesToScroll: 2,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    centerMode: false,
+    touchMove: false,
+    // variableWidth: true,
+    infinite: true,
+    initialSlide: 0, // 첫 번째 슬라이드를 명확하게 설정
+  } );
+  
+  var slider = $('.slider');
+  var slider2 = $('.slider2');
+  // Pause the sliders on mouse enter and resume on mouse leave
+  $('.slider_bg_set').on('mouseenter', function() {
+    // console.log("mouseenter");
+    slider.slick('slickSetOption', 'autoplay', false, true);
+    slider.slick('slickPause');
+    slider2.slick('slickPause');
+
+  });
+  
+  $('.slider_bg_set').on('mouseleave', function() {
+    // console.log("mouseleave");
+    $(".slider").slick('slickPlay');
+    $(".slider2").slick('slickPlay');
+  });
+
+  
+  
   $(window).on('scroll', function() {
     var scrollpos = $(window).scrollTop(); // 현재 스크롤 위치
     var content01 = $('#content1').offset().top; // #content1 요소의 화면에서의 위치
@@ -26,51 +76,6 @@ $(document).ready(function(){
       $('#content5').addClass('animate__animated animate__fadeInUp').css('opacity', '1');
     }
   });
-
-  //캐러셀
-  $(".slider").slick( { // 첫번쩨 슬라이더 설정
-    autoplay: true,
-    autoplaySpeed: 0,
-    speed:3000,
-    cssEase:"linear",
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    pauseOnFocus: true,
-    pauseOnHover: true,
-    centerMode: false,
-    touchMove: false,
-    variableWidth: true,
-    infinite: true,
-  } );
-  $(".slider2").slick( { // 두번째 슬라이더 설정
-    autoplay: true,
-    autoplaySpeed: 0,
-    speed:2000,
-    cssEase:"linear",
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    pauseOnFocus: true,
-    pauseOnHover: true,
-    centerMode: false,
-    touchMove: false,
-    variableWidth: true,
-    infinite: true,
-  } );
-
-  // 마우스가 첫 번째 슬라이더 위에 있을 때 멈추고, 
-  // 벗어나면 다시 시작
-  $('.slider_bg_set').hover(
-    function() {
-      console.log("hover");
-      $(".slider").slick('slickPause');
-      $(".slider2").slick('slickPause');
-    },
-    function() {
-      console.log("벗어남");
-      $(".slider").slick('slickPlay');
-      $(".slider2").slick('slickPlay');
-    }
-  );
 
   $('#product_guide').on('shown.bs.modal', function () {
       // var modal_dialog = $(this).find('.modal_posistion');

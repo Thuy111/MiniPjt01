@@ -59,19 +59,11 @@
   <!-- 캐러셀(글자 흘러가는 애니메이션)---------------- -->
   <div class="slider_margin">
     <div class="slider_bg_set">
-      <div id="moving_panel" class="slider">      
+      <div id="moving_panel" class="slider" inert>      
         <div>이체는</div>
         <div><div class="color_set">간편하게</div></div>
         <div>누구나 쉽고</div>
-        <div><div class="color_set">빠르게</div></div>
-        <div>이체는</div>
-        <div><div class="color_set">간편하게</div></div>
-        <div>누구나 쉽고</div>
-        <div><div class="color_set">빠르게</div></div>
-        <div>이체는</div>
-        <div><div class="color_set">간편하게</div></div>
-        <div>누구나 쉽고</div>
-        <div><div class="color_set">빠르게</div></div>
+        <div><div class="color_set">빠르게</div></div> <!-- 복붙 -->
         <div>이체는</div>
         <div><div class="color_set">간편하게</div></div>
         <div>누구나 쉽고</div>
@@ -81,7 +73,7 @@
         <div>누구나 쉽고</div>
         <div><div class="color_set">빠르게</div></div>
       </div>
-      <div id="moving_panel2" class="slider2">
+      <div id="moving_panel2" class="slider" inert>
         <div><img src="/src/assets/media/images/05products/icon02.png" alt="로켓"></div>
         <div><p>보안은</p></div>
         <div><img src="/src/assets/media/images/05products/icon03.png" alt="열쇠"></div>
@@ -89,16 +81,7 @@
         <div><img src="/src/assets/media/images/05products/icon01.png" alt="식물"></div>
         <div><p>사용은</p></div>
         <div><img src="/src/assets/media/images/05products/icon04.png" alt="윙크"></div>
-        <div><p>편리하게</p></div>
-
-        <div><img src="/src/assets/media/images/05products/icon02.png" alt="로켓"></div>
-        <div><p>보안은</p></div>
-        <div><img src="/src/assets/media/images/05products/icon03.png" alt="열쇠"></div>
-        <div><p>더 안전하게</p></div>
-        <div><img src="/src/assets/media/images/05products/icon01.png" alt="식물"></div>
-        <div><p>사용은</p></div>
-        <div><img src="/src/assets/media/images/05products/icon04.png" alt="윙크"></div>
-        <div><p>편리하게</p></div>
+        <div><p>편리하게</p></div> <!-- 아래 복붙 -->
         <div><img src="/src/assets/media/images/05products/icon02.png" alt="로켓"></div>
         <div><p>보안은</p></div>
         <div><img src="/src/assets/media/images/05products/icon03.png" alt="열쇠"></div>
@@ -134,7 +117,13 @@
       </div>
     </div>
   </div>
+  <script>
+    $(document).ready(function () {
+      console.log($("#moving_panel2 .slick-slide"));
+      $("#moving_panel2 .slick-slide").css("width", "65px");
 
+    });
+  </script>
 
  <!-- 컨텐츠 5개 컨테이너 ---------------------------- -->
   <div class="product_container">

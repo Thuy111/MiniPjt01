@@ -43,8 +43,23 @@
   text-align: center;
   color: #23A662;
 }
+#moving_panel2 .slick-slide:nth-child(2n-1){
+  /* border: 2px solid blue; */
+  width: 65px !important;
+}
+#moving_panel2 .slick-slide:nth-child(8n), #moving_panel2 .slick-slide:nth-child(8n+4){
+  /* border: 2px solid red; */
+  width: 150px !important;
+}
+/* #moving_panel2 .slick-slide:nth-child(8n+2){
+  border: 2px solid pink;
+} */
+#moving_panel2 .slick-slide:nth-child(8n+6){
+  /* border: 2px solid yellow; */
+  width: 250px !important;
+}
 #moving_panel2 div:nth-child(odd) img{
-  width: 60px;
+  width: 62px;
   padding-top: 5px;
 }
 #moving_panel2 div:nth-child(even) p{
@@ -245,13 +260,13 @@
   background-color: rgba(0,0,0,0.2);
 }
 .modal_posistion{
-  max-width: 800px;
+  max-width: 820px;
   width: 50%;
 }
 .modal_bg_set{
   background-color: #fff;
   border-radius: 30px;
-  padding: 10px 15px;
+  padding: 20px 20px;
   border: none;
 }
 .modal_inner{
@@ -260,13 +275,13 @@
 }
 .modal_inner p{
   color: #222222;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 8px;
 }
 .modal_inner div{
   color: #666;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 .modal_inner div>div{
