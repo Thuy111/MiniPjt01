@@ -140,6 +140,7 @@ button.short{
   align-items: center;
   flex-direction: column;
   text-align: center;
+  overflow: hidden;
 }
 #sky_header{
   position: relative;
@@ -158,7 +159,13 @@ button.short{
   height: 465px;
   margin-top: 70px;
   margin-right: 20px;
+  /* position: absolute; */
+  /* bottom: 0; */
 }
+/* #moon {
+  position: absolute;
+  top: 50px;
+} */
 /* 07. sky sun+moon */
 .moonoriginal {
   position: relative;
@@ -188,7 +195,7 @@ button.short{
 
 /* transition: 애니메이션 지속시간 ease(애니메이션속도) 애니메이션 대기시간간 */
 .moon_transition {
-    transition: opacity 0.2s ease-out 1.5s, transform 0s ease-out, width 1s ease-out 1.5s, height 1s ease-out 1.5s; /* transform 애니메이션 (scale) */
+    transition: opacity 0.2s ease-out 1.5s, transform 0s ease-out, width 1s ease-out 1.5s; /* transform 애니메이션 (scale) */
   }
   .animate-moon {
     transition: background-color 2s ease, transform 2s ease;
