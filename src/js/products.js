@@ -28,7 +28,6 @@ $(document).ready(function(){
     touchMove: false,
     // variableWidth: true,
     infinite: true,
-    initialSlide: 0, // 첫 번째 슬라이드를 명확하게 설정
   } );
   
   var slider = $('.slider');
