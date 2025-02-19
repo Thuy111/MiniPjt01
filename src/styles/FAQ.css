@@ -80,8 +80,61 @@ a.nav-link.active {
 }
 
 /* 질문과 답변*************************************** */
+#search_results_container { /* 검색 결과 faq 목록 */
+  width: 1080px;
+  border-top: 1px solid #e6e6e6;
+  margin-top: 20px;
+  font-size: 12px;
+  font-family: '돋움', dotum, sans-serif;
+  font-weight: bolder;
+}
 .tab-content {
   width: 1080px;
+}
+[id^="faq_container"] { /* 카테고리별 faq 목록 */
+  border-top: 1px solid #e6e6e6;
+  margin-top: 20px;
+  font-size: 12px;
+  font-family: '돋움', dotum, sans-serif;
+  font-weight: bolder;
+}
+[id^="faq_container"] i {
+  color: #909090;
+  font-size: x-small;
+  float: right;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+[id^="search_results_container"] i {
+  color: #909090;
+  font-size: x-small;
+  float: right;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+.faq_content { /* 질문-답변 1묶음 */
+  border-bottom: 1px solid #e6e6e6;
+}
+.faq_content:hover {
+  background: #f4f4f4;
+}
+.faq_content div { /* 질문+답변 */
+  padding: 20px 10px;
+}
+.faq_content a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.collapse_bg {
+  background: #f4f4f4;
+}
+.collapse, .search_collapse { /* 답변 */
+  border-top: 1px solid #e2e2e2;
+  background: #f4f4f4;
+}
+.collapse p, .search_collapse p {
+  font-size: 12px;
+  font-family: '돋움', dotum, sans-serif;
 }
 [id^="load_more"] { /* 더보기 버튼 */
   border-bottom: 1px solid #d0d0d0;
@@ -97,41 +150,7 @@ a.nav-link.active {
 [id^="load_more"] i {
   color: #909090;
   font-size: x-small;
-}
-[id^="faq_container"] { /* 카테고리별 faq 목록 */
-  border-top: 1px solid #e6e6e6;
-  margin-top: 20px;
-  font-size: 12px;
-  font-family: '돋움', dotum, sans-serif;
-  font-weight: bolder;
-}
-#search_container { /* 카테고리별 faq 목록 */
-  border-top: 1px solid #e6e6e6;
-  margin-top: 20px;
-  font-size: 12px;
-  font-family: '돋움', dotum, sans-serif;
-  font-weight: bolder;
-}
-.faq_content { /* 질문-답변 1묶음 */
-  border-bottom: 1px solid #e6e6e6;
-}
-.faq_content:hover {
-  background: #f4f4f4;
-}
-.faq_content div { /* 질문+답변 */
-  padding: 20px 10px;
-}
-.faq_content a {
-  text-decoration: none;
-  cursor: pointer;
-}
-.collapse, .search_collapse { /* 답변 */
-  border-top: 1px solid #e2e2e2;
-  background: #f4f4f4;
-}
-.collapse p, .search_collapse p {
-  font-size: 12px;
-  font-family: '돋움', dotum, sans-serif;
+  margin-left: 10px;
 }
 
 /* 답변 효과용*************************************** */
