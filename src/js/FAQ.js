@@ -185,6 +185,14 @@ $(document).ready(function () {
   for (let i = 1; i <= 14; i++) {
     loadCategoryData(i);
   }
+
+  // 검색 태그 클릭 이벤트
+  $(document).on('click', '#serch_tags li', function() {
+    // 리스트 항목의 텍스트를 가져오고 '#' 제거
+    let tagText = $(this).text().replace('# ', ''); 
+    $('#question').val(tagText); // 검색창에 입력
+    $('#search_btn').click(); // 검색 버튼 클릭 이벤트 발생
+  });  
 });
 
 function showCategory(e) {
