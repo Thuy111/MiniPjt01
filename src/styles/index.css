@@ -169,7 +169,7 @@ button.short{
   height: 100px;
   border-radius: 50%;
   background-color: #FFD700; /* 초기 색상: 노랑 */
-  transition: background-color 1s ease;
+  transition: background-color 2s ease;
   z-index: 9999; /* 원을 최상위로 배치 */
   }
 .moonshadow{
@@ -180,17 +180,17 @@ button.short{
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color:  #FFD700;
+  background-color:  #ffffff;
   transition: background-color 1s ease;
   z-index: 9999; /* 원을 최상위로 배치 */
   opacity: 0;
   transition: 
-  opacity 1.5s ease-out 1.5s, 
-  transform 1.5s ease-out; /* transform 애니메이션 (scale) */
+  opacity 2.4s ease-out 1.5s, 
+  transform 2s ease-out; /* transform 애니메이션 (scale) */
 }
 /* transition: 애니메이션 지속시간 ease(애니메이션속도) 애니메이션 대기시간간 */
   .animate-moon {
-    transition: background-color 1s ease, transform 1s ease;
+    transition: background-color 2s ease, transform 2s ease;
     background-color: #FFFFFF; 
   }
   .animate-shadow {
