@@ -126,6 +126,9 @@ a.nav-link.active {
   text-decoration: none;
   cursor: pointer;
 }
+.collapse_bg {
+  background: #f4f4f4;
+}
 .collapse, .search_collapse { /* 답변 */
   border-top: 1px solid #e2e2e2;
   background: #f4f4f4;
