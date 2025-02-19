@@ -31,8 +31,8 @@
 // 브랜드 동영상 클릭 --------------------------------------------------------------------------------------
 $(document).ready(function() {
 // video1 ----------------------------------------
-$('#videoImg1').click(function() {
-    let videoURL = "https://www.youtube.com/embed/ysPg4-mSIJo"; 
+  $('#videoImg1').click(function() {
+    let videoURL = 'https://www.youtube.com/embed/ysPg4-mSIJo'; 
     $('#videoFrame1').attr('src', videoURL).show();
     $(this).hide(); 
     $('#video_wrapper1').addClass('border');
@@ -40,12 +40,12 @@ $('#videoImg1').click(function() {
     $('#videoImg2, #videoImg3').each(function() {          
       $(this).show();
     });
-});
-$('body').click(function(event) {
-if (!$(event.target).closest('#videoImg1').length) {
-    $('#video_wrapper1').removeClass('border');
-  }
-});
+  });
+  $('body').click(function(event) {
+  if (!$(event.target).closest('#videoImg1').length) {
+      $('#video_wrapper1').removeClass('border');
+    }
+  });
 
 // video 2-------------------------------------------
   $('#videoImg2').click(function() {
@@ -57,13 +57,12 @@ if (!$(event.target).closest('#videoImg1').length) {
       $('#videoImg1, #videoImg3').each(function() { 
       $(this).show();
     });
-
   });
   $('body').click(function(event) {
-if (!$(event.target).closest('#videoImg2').length) {
+  if (!$(event.target).closest('#videoImg2').length) {
     $('#video_wrapper2').removeClass('border');
-  }
-});
+    }
+  });
 
 // video 3---------------------------------------------------
   $('#videoImg3').click(function() {
@@ -78,9 +77,9 @@ if (!$(event.target).closest('#videoImg2').length) {
     });
   });
   $('body').click(function(event) {
-if (!$(event.target).closest('#videoImg3').length) {
+  if (!$(event.target).closest('#videoImg3').length) {
     $('#video_wrapper3').removeClass('border');
-  }
-}); 
+    }
+  }); 
 
 });
