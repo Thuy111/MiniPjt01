@@ -32,7 +32,7 @@
       <div id="search_contents">
         <h2>무엇을 도와드릴까요?</h2>
         <div id="question_box">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i id="search_btn" class="fa-solid fa-magnifying-glass"></i>
           <input id="question" type="text" placeholder="궁금하신 점이 있다면 검색 혹은 도움말 카테고리를 선택하세요.">
         </div>
         <ul id="serch_tags">
@@ -46,7 +46,13 @@
     </section>
     <!-- 자주묻는질문--------------------------------------------------------------------------->
     <section id="faq">
-      <!-- Nav tabs------------------------------->
+      <!-- 검색 결과------------------------------>
+      <div id="search_results_container" style="display: none;">
+        <div id="search_results"></div>
+        <a id="load_more_search" style="display: none;">더보기 <i class="fa-solid fa-chevron-down"></i></a>
+      </div>
+
+      <!-- Categoty tab--------------------------->
       <ul id="tab_list" class="nav" role="tablist">
         <li>
           <a id="custom_width" class="nav-link active" data-toggle="tab" href="#category01">입출금/예적금</a>
