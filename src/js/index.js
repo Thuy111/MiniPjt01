@@ -81,13 +81,13 @@ $(document).ready(function(){
     if (scrollpos + $(window).height() > content02 + 100) {
       $('#overseasimg').addClass('animate__animated animate__slideInUp').css('opacity', '1');
     }
-    if (scrollpos + $(window).height() > content03 + 100) {
+    if (scrollpos + $(window).height() > content03 + 200) {
       $('.moonoriginal').addClass('animate-moon').css('opacity', '1');
     }
-    if (scrollpos + $(window).height() > content03 + 100) {
+    if (scrollpos + $(window).height() > content03 + 200) {
       $('.moonshadow').addClass('animate-shadow').css('opacity', '1');
     }
-    if (scrollpos + $(window).height() > content04 + 100) {
+    if (scrollpos + $(window).height() > content04 + 500) {
       $('.sky_bg').css('background-color', '#333b58'); // 밤 배경색
     } else {
       $('.sky_bg').css('background-color', '#87CEEB'); // 낮 배경색
