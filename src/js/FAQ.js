@@ -57,8 +57,10 @@ $(document).ready(function () {
     }
 
     $(faqContainer).html(faqHtml);
+
+    // 더보기 버튼 표시/숨김 처리
     if (visibleItems[tabNumber] >= totalItems[tabNumber]) $(loadMoreBtn).hide();
-    else $(loadMoreBtn).show();
+    else $(loadMoreBtn).show().html(`더보기 (${visibleItems[tabNumber]} / ${totalItems[tabNumber]}) <i class="fa-solid fa-chevron-down"></i>`);
   }
 
   // 더보기 버튼 클릭 이벤트
@@ -71,7 +73,7 @@ $(document).ready(function () {
   // 검색 기능###################################################################################
   // 검색 버튼 및 엔터키 이벤트
   $(document).on('click', '#search_btn', function () {
-    console.log("검색 버튼 클릭됨!");
+    // console.log("검색 버튼 클릭");
     searchQuery = $('#question').val().trim().toLowerCase();
     performSearch();
   });
@@ -79,7 +81,7 @@ $(document).ready(function () {
   $(document).on('keypress', '#question', function (e) {
     if (e.which === 13) { // 엔터키 (keyCode 13)
       e.preventDefault(); // 폼 제출 방지
-      console.log("엔터키 입력됨!");
+      // console.log("엔터키 입력");
       searchQuery = $('#question').val().trim().toLowerCase();
       performSearch();
     }
@@ -87,9 +89,9 @@ $(document).ready(function () {
 
   // 검색 실행
   function performSearch() {
-    console.log("🔍 검색 실행됨!");
+    // console.log("🔍 검색 실행");
     if (!searchQuery) {
-      console.log("검색어 없음");
+      // console.log("검색어 없음");
       return;
     }
 
@@ -109,11 +111,10 @@ $(document).ready(function () {
       return;
     }
 
-    // 기존 탭 & FAQ 숨기기
     $('#tab_list, .tab-content').hide(); // 기존 FAQ 탭 & 내용 숨기기
     $('#search_results_container').show(); // 검색 결과 컨테이너 보이기
     $('#clearSearch').show(); // X 버튼도 표시
-    console.log("📢 기존 컨텐츠 숨기고 검색 결과 표시!");
+    // console.log("📢 기존 컨텐츠 숨기고 검색 결과 표시");
 
     // 검색 결과 표시
     displaySearchResults(10);
@@ -144,10 +145,13 @@ $(document).ready(function () {
     }
 
     $('#search_results').html(resultHtml);
-    console.log("📢 검색 결과가 화면에 추가됨!");
+    // console.log("📢 검색 결과 화면에 표시");
 
-    if (visibleResults >= totalResults) $('#load_more_search').hide();
-    else $('#load_more_search').show();
+    // 검색 결과 더보기 버튼 표시/숨김 처리
+    console.log($('#load_more_search').length);
+    console.log("더보기 버튼 숨김 체크:", visibleResults, totalResults);
+    if (visibleResults >= totalResults) $('#load_more_search').remove();
+    else $('#load_more_search').show().html(`더보기 (${visibleResults} / ${totalResults}) <i class="fa-solid fa-chevron-down"></i>`);
   }
 
   // 검색 결과 더보기 버튼
