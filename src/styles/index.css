@@ -162,9 +162,9 @@ button.short{
 /* 07. sky sun+moon */
 .moonoriginal {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(450px, -690px);
+  top: -694px;
+  left: 110%;
+  /* transform: translate(450px, -690px); */
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -176,25 +176,28 @@ button.short{
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(420px, -810px) scale(0);
-  width: 100px;
-  height: 100px;
+  width: 0px;
+  height: 0px;
   border-radius: 50%;
   background-color:  #ffffff;
   transition: background-color 1s ease;
   z-index: 9999; /* 원을 최상위로 배치 */
   opacity: 0;
-  transition: 
-  opacity 2.4s ease-out 1.5s, 
-  transform 2s ease-out; /* transform 애니메이션 (scale) */
+  transform: translate(420px, -810px);
 }
+
 /* transition: 애니메이션 지속시간 ease(애니메이션속도) 애니메이션 대기시간간 */
+.moon_transition {
+    transition: opacity 0.2s ease-out 1.5s, transform 0s ease-out, width 1s ease-out 1.5s, height 1s ease-out 1.5s; /* transform 애니메이션 (scale) */
+  }
   .animate-moon {
     transition: background-color 2s ease, transform 2s ease;
     background-color: #FFFFFF; 
   }
   .animate-shadow {
-    transform: translate(420px, -810px) translateX(0);
+    width: 100px;
+    height: 100px;
+    transform: translate(420px, -810px);
     opacity: 1;
     background-color: #333b58;
   }
