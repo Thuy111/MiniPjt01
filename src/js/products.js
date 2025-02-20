@@ -1,21 +1,13 @@
 $(document).ready(function(){
-  
-  // 재사용 함수 및 상수 정의 & API 호출 함수 정의
     $('.main_slider').hover(function() {
-      
-      // 현재 위치를
-      const computedStyle = window.getComputedStyle($('#moving_panel')[0]);
-      
       $('#moving_panel, #moving_panel2').css({
         'animation-play-state': 'paused'
       });
-  
     }, function() {
       // 다시 animation 속성을 시작
       $('#moving_panel, #moving_panel2').css({
         'animation-play-state': 'running'
       });
-  
     });
 
   // 스크롤 이벤트 핸들러 설정
@@ -32,7 +24,6 @@ $(document).ready(function(){
     });
   });
 
-  // 모달 표시 이벤트 핸들러 설정
   $('#product_guide, #interest_info, #fee_info, #other_info, #product_terms').on('shown.bs.modal', function () {
     set_position(this);
     if (this.id === 'fee_info') {
