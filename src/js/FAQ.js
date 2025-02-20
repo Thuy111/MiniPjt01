@@ -67,7 +67,7 @@ $(document).ready(function () {
   }
 
   // 더보기 버튼 클릭 이벤트
-  $(document).on('click', '[id^="load_more"]', function () {
+  $(document).on('click', '[id^=""]', function () {
     let tabNumber = $(this).attr('id').replace('load_more', '');
     visibleItems[tabNumber] += 10;
     loadItems(tabNumber);
@@ -145,12 +145,12 @@ $(document).ready(function () {
     $('#search_results').html(resultHtml);
 
     // 검색 결과 더보기 버튼 표시/숨김 처리
-    if (visibleResults >= totalResults) $('#load_more_search').remove();
-    else $('#load_more_search').show().html(`더보기(${visibleResults} / ${totalResults}) <i class="fa-solid fa-chevron-down"></i>`);
+    if (visibleResults >= totalResults) $('#more_search').hide();
+    else ('#more_search').show().html(`더보기(${visibleResults} / ${totalResults}) <i class="fa-solid fa-chevron-down"></i>`);
   }
 
   // 검색 결과 더보기 버튼
-  $('#load_more_search').on('click', function () {
+  $('#more_search').on('click', function () {
     let currentCount = $('#search_results .faq_content').length;
     displaySearchResults(currentCount + 10);
   });
