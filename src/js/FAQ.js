@@ -187,20 +187,14 @@ function showCategory(e) {
   const titleShow = $(e.target.parentNode.childNodes[1]);
   const hasClasses = e.target.parentNode.childNodes[3].classList;
   const allChild = $('.faq_content>div:nth-child(1)'); // 모든 제목
-  const upDown = $('.faq_content>div>a>i'); // 제목에 붙는 아이콘
 
   // 반응이 한박자 느리므로 거꾸로 처리
   // css를 직접 참조하기보다 클래스를 넣는게 더 안정적
   if(hasClasses.contains('show')) {
-    // console.log('show');
     titleShow.removeClass('collapse_bg');
-    // upDown.addClass('fa-chevron-up');
-    // upDown.removeClass('fa-chevron-down');
   }else{
     // console.log('hide');
     allChild.removeClass('collapse_bg');
     titleShow.addClass('collapse_bg');
-    // upDown.addClass('fa-chevron-down');
-    // upDown.removeClass('fa-chevron-up');
   }
 }
