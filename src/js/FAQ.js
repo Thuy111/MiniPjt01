@@ -76,7 +76,6 @@ $(document).ready(function () {
   // 검색 기능###################################################################################
   // 검색 버튼 및 엔터키 이벤트
   $(document).on('click', '#search_btn', function () {
-    // console.log("검색 버튼 클릭");
     searchQuery = $('#question').val().trim().toLowerCase();
     performSearch();
   });
@@ -84,7 +83,6 @@ $(document).ready(function () {
   $(document).on('keypress', '#question', function (e) {
     if (e.which === 13) { // 엔터키 (keyCode 13)
       e.preventDefault(); // 폼 제출 방지
-      // console.log("엔터키 입력");
       searchQuery = $('#question').val().trim().toLowerCase();
       performSearch();
     }
@@ -92,9 +90,8 @@ $(document).ready(function () {
 
   // 검색 실행
   function performSearch() {
-    // console.log("🔍 검색 실행");
     if (!searchQuery) {
-      // console.log("검색어 없음");
+      console.log("검색어 없음");
       return;
     }
 
@@ -112,9 +109,9 @@ $(document).ready(function () {
       return;
     }
 
+    // 기존 컨텐츠 숨기고 검색 결과 표시
     $('#tab_list, .tab-content').hide(); // 기존 FAQ 탭 & 내용 숨기기
     $('#search_results_container').show(); // 검색 결과 컨테이너 보이기
-    // console.log("📢 기존 컨텐츠 숨기고 검색 결과 표시");
 
     // 검색 결과 표시
     displaySearchResults(10);
@@ -144,11 +141,10 @@ $(document).ready(function () {
         </div>`;
     }
 
+    // 검색 결과 화면에 표시
     $('#search_results').html(resultHtml);
-    // console.log("📢 검색 결과 화면에 표시");
 
     // 검색 결과 더보기 버튼 표시/숨김 처리
-    console.log("더보기 버튼 숨김 체크:", visibleResults, totalResults);
     if (visibleResults >= totalResults) $('#load_more_search').remove();
     else $('#load_more_search').show().html(`더보기(${visibleResults} / ${totalResults}) <i class="fa-solid fa-chevron-down"></i>`);
   }
@@ -189,15 +185,12 @@ function showCategory(e) {
   const allChild = $('.faq_content>div:nth-child(1)'); // 모든 제목
   const iconUpDown = e.target.parentNode.childNodes[1].querySelector('i'); // <i> 태그 선택
 
-  console.log(iconUpDown);
-
   // 반응이 한박자 느리므로 거꾸로 처리
   // css를 직접 참조하기보다 클래스를 넣는게 더 안정적
   if(hasClasses.contains('show')) {
     titleShow.removeClass('collapse_bg');
     $(iconUpDown).removeClass('fa-chevron-up').addClass('fa-chevron-down');
   }else{
-    // console.log('hide');
     allChild.removeClass('collapse_bg');
     titleShow.addClass('collapse_bg');
     $(iconUpDown).removeClass('fa-chevron-down').addClass('fa-chevron-up');
