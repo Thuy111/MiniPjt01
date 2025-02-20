@@ -73,7 +73,6 @@ $(document).ready(function(){
     var content03 = $('.moonoriginal').offset().top;
     var content04 = $('.sky_bg').offset().top;
 
-    console.log(scrollpos);
     // 스크롤 값이 400을 넘고, #content1이 화면에 나타나면 애니메이션을 추가
     if (scrollpos + $(window).height() > content01 + 100) {
       $('#savingimg3').addClass('animate__animated animate__slideInRight').css('opacity', '1');
