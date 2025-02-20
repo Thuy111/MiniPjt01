@@ -171,8 +171,10 @@ a.nav-link.active {
   padding: 20px 10px;
   font-size: 13px;
   font-family: '돋움', dotum, sans-serif;
-  text-align: center;
+  font-weight: normal;
   display: block;
+  text-align: center;
+  justify-content: center;
 }
 #more_search:hover { /* 더보기 버튼 */
   cursor: pointer;
@@ -181,6 +183,7 @@ a.nav-link.active {
   color: #909090;
   font-size: x-small;
   margin-left: 10px;
+  float: none;
 }
 
 /* 답변 효과용*************************************** */
