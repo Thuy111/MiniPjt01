@@ -180,17 +180,33 @@ $(document).ready(function () {
 });
 
 function showCategory(e) {
-  const titleShow = $(e.target.parentNode.childNodes[1]);
-  const hasClasses = e.target.parentNode.childNodes[3].classList;
+  let titleShow;
+  let hasClasses;
+
+  if(e.target.parentNode.id){
+    // a태그가 선택 되었을 때
+    titleShow = $(e.target.parentNode.parentNode.childNodes[1]);
+    hasClasses =e.target.parentNode.parentNode.childNodes[3].classList;  
+  }else{
+    // div가 선택 되었을때
+    titleShow = $(e.target.parentNode.childNodes[1]);
+    hasClasses = e.target.parentNode.childNodes[3].classList;
+  }
+  
+  
   const allChild = $('.faq_content>div:nth-child(1)'); // 모든 제목
-  const iconUpDown = e.target.parentNode.childNodes[1].querySelector('i'); // <i> 태그 선택
+  const allUpDown = ('.faq_content>div>a>i'); // 모든 <i> 태그
+  const iconUpDown = titleShow[0].childNodes[1].childNodes[1]; // <i> 태그 선택
+
+  $(allUpDown).removeClass('fa-chevron-up').addClass('fa-chevron-down');
 
   // 반응이 한박자 느리므로 거꾸로 처리
   // css를 직접 참조하기보다 클래스를 넣는게 더 안정적
   if(hasClasses.contains('show')) {
+    // 접힐 때
     titleShow.removeClass('collapse_bg');
-    $(iconUpDown).removeClass('fa-chevron-up').addClass('fa-chevron-down');
   }else{
+    // 열릴 때
     allChild.removeClass('collapse_bg');
     titleShow.addClass('collapse_bg');
     $(iconUpDown).removeClass('fa-chevron-down').addClass('fa-chevron-up');
