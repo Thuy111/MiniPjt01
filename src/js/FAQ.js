@@ -193,8 +193,7 @@ function showCategory(e) {
     titleShow = $(e.target.parentNode.childNodes[1]);
     hasClasses = e.target.parentNode.childNodes[3].classList;
   }
-  
-  
+
   const allChild = $('.faq_content>div:nth-child(1)'); // 모든 제목
   const allUpDown = ('.faq_content>div>a>i'); // 모든 <i> 태그
   const iconUpDown = titleShow[0].childNodes[1].childNodes[1]; // <i> 태그 선택
