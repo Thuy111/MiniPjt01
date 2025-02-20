@@ -187,14 +187,19 @@ function showCategory(e) {
   const titleShow = $(e.target.parentNode.childNodes[1]);
   const hasClasses = e.target.parentNode.childNodes[3].classList;
   const allChild = $('.faq_content>div:nth-child(1)'); // 모든 제목
+  const iconUpDown = e.target.parentNode.childNodes[1].querySelector('i'); // <i> 태그 선택
+
+  console.log(iconUpDown);
 
   // 반응이 한박자 느리므로 거꾸로 처리
   // css를 직접 참조하기보다 클래스를 넣는게 더 안정적
   if(hasClasses.contains('show')) {
     titleShow.removeClass('collapse_bg');
+    $(iconUpDown).removeClass('fa-chevron-up').addClass('fa-chevron-down');
   }else{
     // console.log('hide');
     allChild.removeClass('collapse_bg');
     titleShow.addClass('collapse_bg');
+    $(iconUpDown).removeClass('fa-chevron-down').addClass('fa-chevron-up');
   }
 }
