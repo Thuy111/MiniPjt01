@@ -166,6 +166,22 @@ a.nav-link.active {
   font-size: x-small;
   margin-left: 10px;
 }
+#more_search { /* 더보기 버튼 */
+  border-bottom: 1px solid #d0d0d0;
+  padding: 20px 10px;
+  font-size: 13px;
+  font-family: '돋움', dotum, sans-serif;
+  text-align: center;
+  display: block;
+}
+#more_search:hover { /* 더보기 버튼 */
+  cursor: pointer;
+}
+#more_search i {
+  color: #909090;
+  font-size: x-small;
+  margin-left: 10px;
+}
 
 /* 답변 효과용*************************************** */
 .indent {
