@@ -162,10 +162,6 @@ button.short{
   /* position: absolute; */
   /* bottom: 0; */
 }
-/* #moon {
-  position: absolute;
-  top: 50px;
-} */
 /* 07. sky sun+moon */
 .moonoriginal {
   position: relative;
@@ -193,7 +189,7 @@ button.short{
   transform: translate(420px, -810px);
 }
 
-/* transition: 애니메이션 지속시간 ease(애니메이션속도) 애니메이션 대기시간간 */
+/* transition: 애니메이션 지속시간 ease(애니메이션속도) 애니메이션 대기시간 */
 .moon_transition {
     transition: opacity 0.2s ease-out 1.5s, transform 0s ease-out, width 1s ease-out 1.5s; /* transform 애니메이션 (scale) */
   }
