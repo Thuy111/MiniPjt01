@@ -35,7 +35,7 @@ margin-bottom: 80px;
 }
 
 /* 은행 history--------------------------------------------------------- */
-.timeline{
+.timelineContainer{
   display: flex;
   justify-content: center; 
   align-items: center;
