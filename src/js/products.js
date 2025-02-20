@@ -3,8 +3,6 @@ $(document).ready(function(){
   // 재사용 함수 및 상수 정의 & API 호출 함수 정의
     $('.main_slider').hover(function() {
       
-      // 현재 위치를
-      const computedStyle = window.getComputedStyle($('#moving_panel')[0]);
       
       $('#moving_panel, #moving_panel2').css({
         'animation-play-state': 'paused'
