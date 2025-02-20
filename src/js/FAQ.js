@@ -122,6 +122,7 @@ $(document).ready(function () {
     let resultHtml = '';
     let totalResults = searchResults.length;
     let visibleResults = Math.min(count, totalResults);
+    
 
     for (let i = 0; i < visibleResults; i++) {
       let item = searchResults[i];
@@ -146,7 +147,7 @@ $(document).ready(function () {
 
     // 검색 결과 더보기 버튼 표시/숨김 처리
     if (visibleResults >= totalResults) $('#more_search').hide();
-    else ('#more_search').show().html(`더보기(${visibleResults} / ${totalResults}) <i class="fa-solid fa-chevron-down"></i>`);
+    else $('#more_search').show().html(`더보기(${visibleResults} / ${totalResults}) <i class="fa-solid fa-chevron-down"></i>`);
   }
 
   // 검색 결과 더보기 버튼
