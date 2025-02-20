@@ -114,12 +114,10 @@ $(document).ready(function () {
 
     $('#tab_list, .tab-content').hide(); // 기존 FAQ 탭 & 내용 숨기기
     $('#search_results_container').show(); // 검색 결과 컨테이너 보이기
-    $('#clearSearch').show(); // X 버튼도 표시
     // console.log("📢 기존 컨텐츠 숨기고 검색 결과 표시");
 
     // 검색 결과 표시
     displaySearchResults(10);
-    $('#clearSearch').show();
   }
 
   // 검색 결과 10개씩 표시
@@ -161,16 +159,6 @@ $(document).ready(function () {
     displaySearchResults(currentCount + 10);
   });
 
-  // 검색 초기화 버튼
-  $('#clearSearch').on('click', function () {
-    $('#question').val('');
-    searchQuery = '';
-    $('#search_results').empty();
-    $('#search_results_container').hide();
-    $('#tabs, .faq_container').show();
-    $('#clearSearch').hide();
-  });
-
   // 탭 변경 시 데이터 로드
   $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     let targetTab = $(e.target).attr("href").replace('#category', '');
@@ -199,20 +187,19 @@ function showCategory(e) {
   const titleShow = $(e.target.parentNode.childNodes[1]);
   const hasClasses = e.target.parentNode.childNodes[3].classList;
   const allChild = $('.faq_content>div:nth-child(1)'); // 모든 제목
-  const upDown = $('.faq_content>div>a>i'); // 제목에 붙는 아이콘
+  const iconUpDown = e.target.parentNode.childNodes[1].querySelector('i'); // <i> 태그 선택
+
+  console.log(iconUpDown);
 
   // 반응이 한박자 느리므로 거꾸로 처리
   // css를 직접 참조하기보다 클래스를 넣는게 더 안정적
   if(hasClasses.contains('show')) {
-    // console.log('show');
     titleShow.removeClass('collapse_bg');
-    // upDown.addClass('fa-chevron-up');
-    // upDown.removeClass('fa-chevron-down');
+    $(iconUpDown).removeClass('fa-chevron-up').addClass('fa-chevron-down');
   }else{
     // console.log('hide');
     allChild.removeClass('collapse_bg');
     titleShow.addClass('collapse_bg');
-    // upDown.addClass('fa-chevron-down');
-    // upDown.removeClass('fa-chevron-up');
+    $(iconUpDown).removeClass('fa-chevron-down').addClass('fa-chevron-up');
   }
 }
