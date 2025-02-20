@@ -33,9 +33,11 @@ $(document).ready(function() {
 // video1 ----------------------------------------
   $('#videoImg1').click(function() {
     let videoURL = 'https://www.youtube.com/embed/ysPg4-mSIJo'; 
+    
     $('#videoFrame1').attr('src', videoURL).show();
     $(this).hide(); 
     $('#video_wrapper1').addClass('border');
+
    // video1의 이미지가 사라지면 video2와 video3의 이미지가 보이게
     $('#videoImg2, #videoImg3').each(function() {          
       $(this).show();
