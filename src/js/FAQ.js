@@ -114,12 +114,10 @@ $(document).ready(function () {
 
     $('#tab_list, .tab-content').hide(); // 기존 FAQ 탭 & 내용 숨기기
     $('#search_results_container').show(); // 검색 결과 컨테이너 보이기
-    $('#clearSearch').show(); // X 버튼도 표시
     // console.log("📢 기존 컨텐츠 숨기고 검색 결과 표시");
 
     // 검색 결과 표시
     displaySearchResults(10);
-    $('#clearSearch').show();
   }
 
   // 검색 결과 10개씩 표시
@@ -159,16 +157,6 @@ $(document).ready(function () {
   $('#load_more_search').on('click', function () {
     let currentCount = $('#search_results .faq_content').length;
     displaySearchResults(currentCount + 10);
-  });
-
-  // 검색 초기화 버튼
-  $('#clearSearch').on('click', function () {
-    $('#question').val('');
-    searchQuery = '';
-    $('#search_results').empty();
-    $('#search_results_container').hide();
-    $('#tabs, .faq_container').show();
-    $('#clearSearch').hide();
   });
 
   // 탭 변경 시 데이터 로드
