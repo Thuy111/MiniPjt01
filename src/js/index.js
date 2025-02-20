@@ -91,9 +91,9 @@ $(document).ready(function(){
       $('.moonshadow').removeClass('animate-shadow moon_transition');
     }
     if (scrollpos + $(window).height() > content04 + 500) {
-      $('.sky_bg').css('background-color', '#333b58'); // 밤 배경색
+      $('.sky_bg').css('background-color', '#333b58');
     } else {
-      $('.sky_bg').css('background-color', '#87CEEB'); // 낮 배경색
+      $('.sky_bg').css('background-color', '#87CEEB'); 
     }
    
   });
@@ -101,23 +101,22 @@ $(document).ready(function(){
 
 // 별 깜빡깜빡
 window.addEventListener('scroll', () => {
-  const scrollPosition = window.scrollY; // 현재 스크롤 위치
+  const scrollPosition = window.scrollY;
   const h2Element = document.querySelector('#sky_mainhead');
-  const h2Position = h2Element.offsetTop; // h2의 Y축 위치
-  const windowHeight = window.innerHeight; // 뷰포트 높이
+  const h2Position = h2Element.offsetTop;
+  const windowHeight = window.innerHeight;
   const circle = document.querySelector('.circle');
   const container = document.querySelector('.container');
   const stars = document.querySelectorAll('.star');
 
   // h2 태그를 지날 때 색상 변경 및 별 표시
   if (scrollPosition + windowHeight > h2Position) {
-    container.style.background = '#000000'; // 배경 색상: 검은색
-    circle.style.backgroundColor = '#FFFFFF'; // 원 색상: 하얀색
-    stars.forEach(star => star.style.display = 'block'); // 별 표시
+    $(circle).css('backgroundColor','#FFFFFF');
+    stars.forEach(star => star.style.display = 'block');
   } else {
-    container.style.background = '#87CEEB'; // 배경 색상: 파랑
-    circle.style.backgroundColor = '#FFD700'; // 원 색상: 노랑
-    stars.forEach(star => star.style.display = 'none'); // 별 숨기기
+    container.style.background = '#87CEEB';
+    circle.style.backgroundColor = '#FFD700';
+    stars.forEach(star => star.style.display = 'none');
   }
 });
  
