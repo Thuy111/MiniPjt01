@@ -67,7 +67,7 @@ $(document).ready(function () {
   }
 
   // 더보기 버튼 클릭 이벤트
-  $(document).on('click', '[id^=""]', function () {
+  $(document).on('click', '[id^="load_more"]', function () {
     let tabNumber = $(this).attr('id').replace('load_more', '');
     visibleItems[tabNumber] += 10;
     loadItems(tabNumber);
