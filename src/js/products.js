@@ -24,16 +24,30 @@ $(document).ready(function(){
     });
   });
 
+  // $('#product_guide, #interest_info, #fee_info, #other_info, #product_terms').on('shown.bs.modal', function () {
+  //   set_position(this);
+  //   if (this.id === 'fee_info') {
+  //     // 모든 li 태그를 선택하여 숫자 인덱스 추가
+  //     $('#mod_list li').each(function(index) {
+  //       $(this).text((index + 1) + '. ' + $(this).text());
+  //     });
+  //   }
+  // });
   $('#product_guide, #interest_info, #fee_info, #other_info, #product_terms').on('shown.bs.modal', function () {
     set_position(this);
     if (this.id === 'fee_info') {
-      // 모든 li 태그를 선택하여 숫자 인덱스 추가
-      $('#mod_list li').each(function(index) {
-        $(this).text((index + 1) + '. ' + $(this).text());
-      });
+      // 이미 숫자 인덱스가 추가된 경우 추가하지 않도록 처리
+      if (!$(this).data('index-added')) {
+        // 모든 li 태그를 선택하여 숫자 인덱스 추가
+        $('#mod_list li').each(function(index) {
+          $(this).text((index + 1) + '. ' + $(this).text());
+        });
+        // 'index-added' 데이터를 true로 설정하여 이후에 다시 추가되지 않도록 함
+        $(this).data('index-added', true);
+      }
     }
   });
-
+  
 });
 
 // 모달 위치 설정 함수
