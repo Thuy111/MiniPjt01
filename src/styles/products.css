@@ -1,7 +1,12 @@
 /* 기본적인 배치를 위한 css */
+#product_container {
+  width: 100%;
+  min-width: 1080px;
+  margin: 0 auto;
+}
 .product_container{
   text-align: center;
-  margin: 0px 20%;
+  /* margin: 0px 20%; */
   overflow: hidden;
 }
 .container_top_margin{
@@ -21,9 +26,9 @@
 .main_slider {background-color: #23A662;overflow:hidden;}
 /* animation */
 .slider_body {overflow: hidden;height: 265px; background-color: #23A662;}
-.slider_section {display: flex; width: 200%;}
+.slider_section {display: flex; width: 3828px;}
 /* .animation_panel */
-.slider {display: flex; white-space: nowrap; width: 100vw;align-items: center;}
+.slider {display: flex; white-space: nowrap; width: 1914px;align-items: center;}
 .animation_box1 {animation: moveToRight 35s linear infinite;}
 .animation_box2 {animation: moveToRight 20s linear infinite;}
 .moving_margin{padding: 5px;}

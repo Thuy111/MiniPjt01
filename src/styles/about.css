@@ -1,7 +1,7 @@
 
 @font-face {
   font-family: 'MyFont';
-  src: url('/src/assets/font/KoPubWorld_Dotum_Light.ttf') format('truetype'),
+  src: url('/src/assets/font/KoPubWorld_Dotum_Light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;}
 
@@ -23,6 +23,10 @@
   line-height: 35px;
   font-weight: 200;
   
+}
+
+.about_container {
+  min-width: 1080px;
 }
 
 /* 홈 이미지 -----------------------------------------------------------*/
@@ -167,7 +171,9 @@ margin-bottom: 80px;
 .biImg{
   background-image: url(/src/assets/media/images/02about/img_brand_bi.png);
   background-size: cover;
-  height: 500px;
+  height: 410px;
+  width: 950px;
+  margin: 0 auto 60px auto;
   margin-bottom: 60px;
   background-position: center; 
 }

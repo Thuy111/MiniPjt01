@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>carousel</title>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    /* reset */
+    *{margin: 0;padding: 0;box-sizing: border-box;}
+  </style>
+</head>
+<body>
+  <h1>Carousel</h1>
+  <div class="container">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+  </div>
+  <button class="prev">prev</button>
+  <button class="next">next</button>
+
+  <script>
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  <hr style="margin-top: 500px;">
+  <!-- 불가능 -->
+   <div style="display: none;">
+     <h1>Iframe</h1>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/ysPg4-mSIJo?si=sXuEfk74gTEcUr0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   </div>
+ 
+
+  <hr>
+  <h1>Home</h1>
+  <a href="/index.html">LINK</a>
+  <script>
+    $(document).ready(function() {
+      // iframe load
+      $('iframe').on('load', function(){
+        console.log($(this).attr('src'));
+        
+        // iframe 내부 문서 접근
+        const iframeDoc = $(this).contents();
+        console.log(iframeDoc);
+                
+      });
+    });
+  </script>
+</body>
+</html>
