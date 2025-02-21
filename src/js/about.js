@@ -84,4 +84,15 @@ $(document).ready(function() {
     }
   }); 
 
+  // resize
+  $(window).resize(function() {
+    let resizeVideo = $(window).width();
+    if (resizeVideo < 1201) {
+      $('.video_box').removeClass('container');
+    }else{
+      $('.video_box').addClass('container');
+    }
+    
+  });
+
 });
