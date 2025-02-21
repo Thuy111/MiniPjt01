@@ -2,6 +2,7 @@
 #search {
   background: #FFE100;
   width: 100%;
+  min-width: 1080px;
   height: 327px;
   text-align: center;
   display: flex;
@@ -56,7 +57,7 @@
 /* 자주묻는 질문******************************************************************************* */
 #faq {
   color: black;
-  width: 1155px;
+  width: 1080px;
   margin: 50px auto;
 }
 
