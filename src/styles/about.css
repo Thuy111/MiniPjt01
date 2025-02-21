@@ -100,6 +100,7 @@ margin-bottom: 80px;
   margin-top: 80px;
   margin-bottom: 130px;
   font-family: 'MyFont';
+  box-sizing: border-box;
 }
 .video .container{
   margin-top: 30px;
@@ -117,6 +118,7 @@ margin-bottom: 80px;
    margin-bottom: 60px; 
    margin-top: 25px;
   }
+  #video {min-width: 1050px; width: 100%;}
   #video .col-sm-4{ line-height: 20px;}
   #video .col-sm-4 div:nth-of-type(1){ 
     margin-bottom: 30px;
@@ -167,6 +169,8 @@ margin-bottom: 80px;
 /* BI 소개 --------------------------------------------------------------------- */
 .bi_intro{
   font-family: 'MyFont';
+  box-sizing: border-box;
+  padding: 0;
 }
 .biImg{
   background-image: url(/src/assets/media/images/02about/img_brand_bi.png);
@@ -212,9 +216,10 @@ margin-bottom: 80px;
   background-color: #fafafa;
   text-align: center;
   align-items: center;
-  
 }
 
-
+@media screen and (max-width: 1201px) {
+  #video {flex-wrap: nowrap; margin: 0 auto;}
+}
 
 
