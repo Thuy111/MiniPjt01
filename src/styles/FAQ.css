@@ -59,15 +59,17 @@
   color: black;
   width: 1080px;
   margin: 150px auto 100px auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 /* 카테고리****************************************** */
 #tab_list {
-  width: 100%;
   margin-bottom: 50px;
   font-size: 15px;
   position: absolute;
   top: 450px;
+  flex-wrap: nowrap;
 }
 #tab_list li:first-of-type a.nav-link {
   border-left: 1px solid #e6e6e6;
@@ -98,7 +100,10 @@ a.nav-link.active {
 
 /* 질문과 답변*************************************** */
 #search_results_container { /* 검색 결과 faq 목록 */
-  width: 1080px;
+  max-width: 1080px;
+  min-width: 1040px;
+  width: 100%;
+  margin: 20px auto 0 auto;
   border-top: 1px solid #e6e6e6;
   margin-top: 20px;
   font-size: 12px;
@@ -106,7 +111,10 @@ a.nav-link.active {
   font-weight: bolder;
 }
 .tab-content {
-  width: 1080px;
+  max-width: 1080px;
+  min-width: 1040px;
+  width: 100%;
+  margin: 0 auto;
 }
 [id^="faq_container"] { /* 카테고리별 faq 목록 */
   border-top: 1px solid #e6e6e6;
@@ -211,4 +219,8 @@ a.nav-link.active {
   color: #085294;
   text-decoration: underline;
   text-decoration-color: black;
+}
+
+@media screen and (max-width: 1080px) {
+  a.nav-link {width: 70px;}
 }
