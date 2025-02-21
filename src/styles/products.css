@@ -8,6 +8,8 @@
   text-align: center;
   /* margin: 0px 20%; */
   overflow: hidden;
+  width: 1080px;
+  margin: auto;
 }
 .container_top_margin{
   margin-top: 200px;
@@ -23,7 +25,7 @@
 }
 
 /* 캐러셀 스타일 */
-.main_slider {background-color: #23A662;overflow:hidden;}
+.main_slider {background-color: #23A662;overflow:hidden;width: 100%;min-width: 1080px;}
 /* animation */
 .slider_body {overflow: hidden;height: 265px; background-color: #23A662;}
 .slider_section {display: flex; width: 3828px;}
@@ -103,6 +105,8 @@
 #question_panel{
   margin-top: 40px;
   margin-bottom: 80px;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 .slider_margin{
   margin-top: 120px;
@@ -169,6 +173,7 @@
   min-height: 400px;
   padding: 30px 0px;
   opacity: 0;
+  box-sizing: border-box;
 }
 #panel1,#panel2,#panel3,#panel4,#panel5{
   transform: translateY(80px);
@@ -344,8 +349,8 @@
 @media screen and (max-width:1345px){
   .product_container{
     text-align: center;
-    margin-left:100px;
-    margin-right:100px;
+    /* margin-left:100px;
+    margin-right:100px; */
   }
   .info_setting > div{
     width: 45%;

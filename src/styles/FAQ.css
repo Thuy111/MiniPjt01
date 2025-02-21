@@ -58,7 +58,7 @@
 #faq {
   color: black;
   width: 1080px;
-  margin: 50px auto;
+  margin: 150px auto 100px auto;
 }
 
 /* 카테고리****************************************** */
@@ -66,6 +66,8 @@
   width: 100%;
   margin-bottom: 50px;
   font-size: 15px;
+  position: absolute;
+  top: 450px;
 }
 #tab_list li:first-of-type a.nav-link {
   border-left: 1px solid #e6e6e6;

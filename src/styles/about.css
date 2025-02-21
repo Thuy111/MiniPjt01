@@ -187,7 +187,10 @@ margin-bottom: 80px;
   .text_sym p{
     font-size: 12px;
   }
-
+  .about_hr {
+    width: 1080px;
+    margin: 0 auto;
+  }
 
 #dl_btn{
   display: flex;
