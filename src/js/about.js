@@ -1,6 +1,6 @@
  // Ajax로 은행의 History 구현현 --------------------------------------------------------------------->
  $(document).ready(function() {
-  $.getJSON('../data/timeline.json', function(timelineData) {
+  $.getJSON('/portfolio/MiniPjt01/src/data/timeline.json', function(timelineData) {
       let timelineContainer = $("#timeline");
 
       //  높은 열부터 시작

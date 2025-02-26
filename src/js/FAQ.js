@@ -130,8 +130,8 @@ $(document).ready(function () {
 
       resultHtml += `
         <div class="faq_content">
-          <div id="search_content${i}" onclick="showCategory(event)">
-            <a data-toggle="collapse" data-target="#search_collapse${i}" aria-expanded="false" aria-controls="search_collapse${i}">
+          <div id="search_content${i}" onclick="showCategory(event)" data-toggle="collapse" data-target="#search_collapse${i}" aria-expanded="false" aria-controls="search_collapse${i}">
+            <a>
               ${subcategoryText}${item.title}
               <i class="fa-solid fa-chevron-down"></i>
             </a>
