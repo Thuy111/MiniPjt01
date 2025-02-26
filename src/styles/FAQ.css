@@ -146,7 +146,7 @@ a.nav-link.active {
 .faq_content div { /* 질문+답변 */
   padding: 20px 10px;
 }
-.faq_content a {
+.faq_content a, .faq_content [id*=content] {
   text-decoration: none;
   cursor: pointer;
 }
@@ -157,7 +157,7 @@ a.nav-link.active {
   border-top: 1px solid #e2e2e2;
   background: #f4f4f4;
 }
-.collapse p, .search_collapse p {
+.collapse p {
   font-size: 12px;
   font-family: '돋움', dotum, sans-serif;
 }

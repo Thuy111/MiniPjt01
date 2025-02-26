@@ -62,7 +62,7 @@ button.short{
   z-index: 1;
 }
 .index_lion_bg {
-  background-image: url("/src/assets/media/images/01index/00main3.png");
+  background-image: url("../assets/media/images/01index/00main3.png");
   background-size: cover;
   background-position: 0 -20px;
   background-repeat: no-repeat; 
@@ -238,7 +238,7 @@ button.short{
 }
 .card_box {position: relative;text-align: center;margin: 5rem auto;} 
 .index_container.checkcard_bg {
-  background: url();
+  background: url('../assets/media/images/01index/04checkcard_bg.png');
   background-size: cover;
   height: 900px;
   display: flex;
@@ -302,7 +302,6 @@ button.short{
 .controll-card i:hover{color: black;}
 /* 09.IT------------------------------------------------- */
 .index_container.it_bg {
-  background: url();
   background-size: cover;
   height: 1100px;
   display: flex;
@@ -387,7 +386,7 @@ button.short{
   margin-top: 30px;
 }
 .index_container.overseas_box{
-  background-image: url(/src/assets/media/images/01index/05map.png);
+  background-image: url('../assets/media/images/01index/05map.png');
   background-repeat: no-repeat;
   background-position: -150px;
   height: 750px;
@@ -403,7 +402,7 @@ button.short{
 /* 캐러셀----------------------------------------------------------------------------------- */
 /* 캐러셀 버튼*/
 .carousel-control-prev-icon {
-  background-image: url('/src/assets/media/images/01index/00card-arrow2.png');
+  background-image: url('../assets/media/images/01index/00card-arrow2.png');
   background-size: contain; 
   background-repeat: no-repeat;
   width: 30px; 
@@ -411,7 +410,7 @@ button.short{
   transform: rotate(180deg);
 }
 .carousel-control-next-icon {
-  background-image: url('/src/assets/media/images/01index/00card-arrow2.png');
+  background-image: url('../assets/media/images/01index/00card-arrow2.png');
   background-size: contain;
   background-repeat: no-repeat;
   width: 30px;
